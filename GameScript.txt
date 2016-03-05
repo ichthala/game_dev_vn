@@ -1,0 +1,13 @@
+define i = Character ('Me', color="#c8ffc8")
+define p = Character('Programmer', color="#c8c8ff")
+define a = Character('Artist', color="#c8c8ff")
+define d = Character('Designer', color="#c8c8ff")
+
+define bg 
+
+label start:
+
+
+	"The End"
+	
+	return
