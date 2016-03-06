@@ -1,13 +1,32 @@
-define i = Character ('Me', color="#c8ffc8")
-define p = Character('Programmer', color="#c8c8ff")
-define a = Character('Artist', color="#c8c8ff")
-define d = Character('Designer', color="#c8c8ff")
+    # First Programmer Choice Menu
+    menu:
+        "No":
+            jump ProgrammerChoice1
+            
+        "Yes":
+            jump
 
-define bg 
-
-label start:
 
 
-	"The End"
-	
-	return
+    # Initialize flags
+    $programQ1 = False
+    $programQ2 = False
+    $programQ3 = False
+    $programChoice = False
+    $artQ1 = False
+    $artQ2 = False
+    $artQ3 = False
+    $artChoice = False
+    $designQ1 = False
+    $designQ2 = False
+    $designQ3 = False
+    $designChoice = False
+
+# The game ends here.
+label end:
+        "The End"
+
+
+Input - entering your name
+menu jumps
+flags
