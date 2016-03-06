@@ -30,9 +30,11 @@ label start:
         povname = renpy.input("What is your name?")
         povname = povname.strip()
 
-        if not povename:
+        if not povname:
             povname  = "..."
 
+    i "Hi, I'm [povname]"
+    
     show  programmer normal
     p  "Intro Dialogue"
  
