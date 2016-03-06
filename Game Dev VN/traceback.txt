@@ -1,8 +1,11 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
+<<<<<<< HEAD
   File "game/script.rpy", line 29, in script
     python:
+=======
+>>>>>>> 788981fe9ce7bc78098c1008c676ad359cdc415f
   File "game/script.rpy", line 33, in <module>
     if not povename:
 NameError: name 'povename' is not defined
@@ -10,11 +13,18 @@ NameError: name 'povename' is not defined
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
+<<<<<<< HEAD
   File "game/script.rpy", line 29, in script
     python:
   File "/Applications/renpy-6.99.8-sdk/renpy/ast.py", line 805, in execute
     renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
   File "/Applications/renpy-6.99.8-sdk/renpy/python.py", line 1461, in py_exec_bytecode
+=======
+  File "lib/windows-i686/script.rpyc", line 29, in script
+  File "C:\Users\Intel\Desktop\Emily Folder\renpy-6.99.8-sdk\renpy\ast.py", line 805, in execute
+    renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
+  File "C:\Users\Intel\Desktop\Emily Folder\renpy-6.99.8-sdk\renpy\python.py", line 1461, in py_exec_bytecode
+>>>>>>> 788981fe9ce7bc78098c1008c676ad359cdc415f
     exec bytecode in globals, locals
   File "game/script.rpy", line 33, in <module>
     if not povename:
