@@ -3,16 +3,20 @@ image bg office = "bgOffice.jpg"
 
 # Sprites
 image programmer happy = "programmer_happy.png"
-image programmer  normal = "programmer_normal.png"
-image programmer  explain = "programmer_explain.png"
+image programmer normal = "programmer_normal.png"
+image programmer explain = "programmer_explain.png"
 image artist happy = "artist_happy.png"
 image artist normal = "artist_normal.png"
-image artist  explain = "artist_explain.png"
+image artist explain = "artist_explain.png"
 image designer happy = "artist_happy.png"
 image designer normal = "designer_normal.png"
 image designer explain = "designer_explain.png"
 
-# Characters.
+# Non-Sprite Images
+image sample_script_1 = Image("sample_script_1.png", yalign=0.35)
+image sample_script_2 = Image("sample_script_2.png", yalign=0.25)
+
+# Characters
 define p = Character('Serena', color="#c8c8ff")
 define a = Character('Artist', color="#c8c8ff")
 define d = Character('Designer', color="#c8c8ff")
@@ -38,7 +42,11 @@ label start:
 
     "When I turn around, I almost collide with a woman coming up the office stairs. I give a little yell, but the woman just laughs."
 
+    show programmer happy
+
     "???" "I guess you’re the fresh blood."
+
+    show programmer normal
 
     "Me" "Is it really that obvious?"
 
@@ -47,6 +55,8 @@ label start:
     "I look down at the collared shirt and shiny gray pencil skirt I bought at Banana Republic last week. Then I look at the woman’s ensemble. It’s a little bit hip and a little bit goth. She looks like she just walked out of a 90s high school, but in a really good way."
 
     "Me" "I like your outfit!"
+
+    show programmer happy
 
     "???" "Thanks. I got this shirt in Germany last time I visited my parents. I’m Serena, by the way. And as I recall, your name is…"
 
@@ -61,6 +71,8 @@ label start:
     p "[povname], right?"
 
     i "Wow. Good memory!"
+
+    show programmer normal
 
     p "Yeah. It helps with the job."
 
@@ -82,7 +94,9 @@ label start:
 
     i "Um..."
 
-    "The truth is, I'm not really sure. I got this internship because I made a short documentary about competitive gaming for school, and the hiring manager, Ayla, loved it. I know I want to work in games, but I don't have any experience yet. The whole point of this internship is to try and figure out exactly what I want to do."
+    "The truth is, I'm not really sure. I got this internship because I made a short documentary about competitive gaming for school, and the hiring manager, Ayla, loved it."
+
+    "I know I want to work in games, but I don't have any experience yet. The whole point of this internship is to try and figure out exactly what I want to do."
 
     i "I think I'm going to be reporting to one of the producers, but Ayla said I'll have room to explore a lot of different options while I'm here."
 
@@ -100,7 +114,7 @@ label start:
 
     i "Um..."
 
-    "She sits down at a desk that's nearly empty except for a mug that says 'Animal Haven' on it. Then she pulls up an extra chair."
+    "She sits down at a desk that's nearly empty except for a mug that says \"Animal Haven\" on it. Then she pulls up an extra chair."
 
     p "Have a seat and we'll get started."
 
@@ -144,7 +158,11 @@ label programmer_wrong_number:
     jump programmer_question_1
 
 label programmer_right_1:
+    show programmer happy
+
     p "That's right. Great job! The item count would be an integer."
+
+    show programmer normal
 
     p "If I wanted to declare an integer in code, I'd write this:"
 
@@ -160,23 +178,13 @@ label programmer_right_1:
 
     p "Okay, now I'm going to jump ahead a bit. Give me a minute..."
 
-    # String name;
-    # float value;
-    # int count;
-
-    # value = 1001.75;
-    # count = 3;
-
-    # if (value > 1000) {
-    #   name = "Golden Crossbow";
-    # }
-    # else {
-    #   name = "Plain Crossbow";
-    # }
+    hide programmer
+    show sample_script_1
 
     p "So, what do you think is the value of the name variable at the end of this code segment?"
 
 label programmer_question_2:
+    hide sample_script_1
     menu:
         "Plain Crossbow":
             jump programmer_wrong_2
@@ -188,41 +196,19 @@ label programmer_question_2:
             jump programmer_wrong_2
 
 label programmer_wrong_2:
+    show sample_script_1
     p "Not quite. Why don't you try again?"
     jump programmer_question_2
 
 label programmer_right_2:
+    show programmer happy
     p "Great job. Now let's try something else..."
-
-    # String name;
-    # float value;
-    # int count;
-
-    # value = 10.50;
-    # count = 3;
-
-    # if (value > 10.50) {
-    #   name = "Golden Crossbow";
-    # }
-    # else {
-    #   name = "Plain Crossbow";
-    # }
-
-    # function total_value() {
-    #   count * value;
-    # }
-
-    # function sell() {
-    #   count = count - 1;
-    # }
-
-    # while (total_value() > 10) {
-    #   sell();
-    # }
-
+    hide programmer
+    show sample_script_2
     p "So, how many crossbows do I have at the end of this code segment?"
 
 label programmer_question_3:
+    hide sample_script_2
     menu:
         "3":
             jump programmer_wrong_3
@@ -234,13 +220,18 @@ label programmer_question_3:
             jump programmer_wrong_3
 
 label programmer_wrong_3:
+    show sample_script_2
     p "Not quite. Why don't you try again?"
     jump programmer_question_3
 
 label programmer_right_3:
+    show programmer happy
+
     p "Awesome! See, that's all there is to it."
 
     i "Really?"
+
+    show programmer normal
 
     p "Well, no. It gets a lot more complicated than that. But these are the building blocks for everything that comes after."
 
@@ -253,6 +244,8 @@ label programmer_right_3:
     p "Oh, that's the animal shelter where I volunteer on the weekends. If you like animals, you should join me some time. We could use the help."
 
     "She shows me around the kitchen: snacks, coffee machine, water cooler. I'm starting to really like this place."
+
+    hide programmer
 
     "Looking back on what I learned about programming, I think to myself..."
 
