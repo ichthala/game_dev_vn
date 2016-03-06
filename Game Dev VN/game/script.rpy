@@ -26,7 +26,7 @@ label start:
 
     "It’s 9:55 a.m. on the first day of my internship at GameCompany. They told me to be here at 10… The office is locked. No one is here yet."
 
-    i "Does everyone really arrive after 10…?"
+    "Me" "Does everyone really arrive after 10…?"
 
     "I feel so silly. What if someone shows up and sees me standing here looking like a lost weirdo?"
 
@@ -40,13 +40,13 @@ label start:
 
     "???" "I guess you’re the fresh blood."
 
-    i "Is it really that obvious?"
+    "Me" "Is it really that obvious?"
 
     "???" "Well, you’re a little overdressed…"
 
     "I look down at the collared shirt and shiny gray pencil skirt I bought at Banana Republic last week. Then I look at the woman’s ensemble. It’s a little bit hip and a little bit goth. She looks like she just walked out of a 90s high school, but in a really good way."
 
-    i "I like your outfit!"
+    "Me" "I like your outfit!"
 
     "???" "Thanks. I got this shirt in Germany last time I visited my parents. I’m Serena, by the way. And as I recall, your name is…"
 
@@ -126,13 +126,13 @@ label start:
 
 label programmer_question_1:
     menu:
-        "Floating-point number."
+        "Floating-point number.":
             jump programmer_wrong_1
-        "Integer."
+        "Integer.":
             jump programmer_right_1
-        "String."
+        "String.":
             jump programmer_wrong_1
-        "Number."
+        "Number.":
             jump programmer_wrong_number
 
 label programmer_wrong_1:
@@ -141,6 +141,7 @@ label programmer_wrong_1:
 
 label programmer_wrong_number:
     p "Almost, but that's not specific enough. Give it another shot."
+    jump programmer_question_1
 
 label programmer_right_1:
     p "That's right. Great job! The item count would be an integer."
@@ -177,13 +178,13 @@ label programmer_right_1:
 
 label programmer_question_2:
     menu:
-        "Plain Crossbow"
+        "Plain Crossbow":
             jump programmer_wrong_2
-        "Golden Crossbow"
+        "Golden Crossbow":
             jump programmer_right_2
-        "nothing"
+        "nothing":
             jump programmer_wrong_2
-        "1001.75"
+        "1001.75":
             jump programmer_wrong_2
 
 label programmer_wrong_2:
@@ -223,13 +224,13 @@ label programmer_right_2:
 
 label programmer_question_3:
     menu:
-        "3"
+        "3":
             jump programmer_wrong_3
-        "2"
+        "2":
             jump programmer_wrong_3
-        "1"
+        "1":
             jump programmer_right_3
-        "0"
+        "0":
             jump programmer_wrong_3
 
 label programmer_wrong_3:
@@ -255,9 +256,15 @@ label programmer_right_3:
 
     "Looking back on what I learned about programming, I think to myself..."
 
-    menu:
-        "It seemed really cool."
-        "It was just okay."
-        "I don't think it's my thing."
+menu:
+    "It seemed really cool.":
+        jump proceed_from_programmer_feelings
+    "It was just okay.":
+        jump proceed_from_programmer_feelings
+    "I don't think it's my thing.":
+        jump proceed_from_programmer_feelings
+
+label proceed_from_programmer_feelings:
+    "Hmmm..."
 
 return

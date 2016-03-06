@@ -2,20 +2,8 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 28: python block expects a non-empty block.
-    python:
-           ^
-
-File "game/script.rpy", line 29: expected statement.
-    povname = renpy.input("What is your name?")
-            ^
-
-File "game/script.rpy", line 30: expected statement.
-    povname = povname.strip()
-            ^
-
-File "game/script.rpy", line 33: expected statement.
-    povname  = "..."
-             ^
+File "game/script.rpy", line 259: choice menuitem expects a non-empty block.
+    "It seemed really cool.":
+                             ^
 
 Ren'Py Version: Ren'Py 6.99.8.959
