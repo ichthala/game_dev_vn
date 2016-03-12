@@ -23,8 +23,8 @@ image textframe = "textframe.jpg"
 
 # Characters
 define p = Character('Serena', color="#e30000")
-define a = Character('Artist', color="#e3a000")
-define d = Character('Designer', color="#6100e3")
+define a = Character('Maeve', color="#e3a000")
+define d = Character('Angela', color="#6100e3")
 define i = Character("[povname]", color="#00ff00")
 
 
@@ -163,10 +163,6 @@ label start:
 
 
 label programmer_question_1:
-    hide programmer
-    with dissolve
-    
-    scene bg office
     
     show programmer normal at right
     with move
@@ -183,20 +179,22 @@ label programmer_question_1:
             jump programmer_wrong_number
 
 label programmer_wrong_1:
-    show programmer explain at right
+    show programmer explain at center
+    with move
     
     p "Not quite. Why don't you try again?"
     jump programmer_question_1
 
 label programmer_wrong_number:
+    
+    
     p "Almost, but that's not specific enough. Give it another shot."
     jump programmer_question_1
 
 label programmer_right_1:
-    scene bg office
-    with dissolve
     
-    show programmer happy
+    show programmer happy at center
+    with move
 
     p "That's right. Great job! The item count would be an integer."
 
@@ -256,10 +254,10 @@ label programmer_wrong_2:
     jump programmer_question_2
 
 label programmer_right_2:
-    hide programmer
-    with dissolve
     
-    show programmer happy
+    show programmer happy at center
+    with move
+    
     p "Great job. Now let's try something else..."
     hide programmer
     show sample_script_2
@@ -289,10 +287,9 @@ label programmer_wrong_3:
     jump programmer_question_3
 
 label programmer_right_3:
-    scene bg office
-    with dissolve
     
-    show programmer happy
+    show programmer happy at center
+    with move
 
     p "Awesome! See, that's all there is to it."
 
@@ -343,6 +340,7 @@ label artist_part_1:
     i "Hi!"
 
     show artist normal
+    with dissolve
 
     "???" "La--Oh, gosh! Sorry, I was just thinking about my new routine and got carried away"
 
@@ -360,12 +358,15 @@ label artist_part_1:
 
     a "Nice to meetcha! I'm Maeve--I'm the art lead on Astral War. You studying animation?"
 
-    i "I'm kind of trying a little bit of everything right now. I guess I I'm not really sure yet what I want to specialize in."
+    i "I'm kind of trying a little bit of everything right now. I guess I'm not really sure yet what I want to specialize in."
 
     a "I getcha--the generalist path! You interested in helping out on the art side of things?"
 
     i "I mean, I don't really know where to start."
-
+    
+    hide artist
+    with dissolve
+    
     "I follow her over to a computer, where she sits down and opens up a complicated looking program. The interface has approximately a bajillion menu options."
 
     #show art_image_maya
@@ -374,10 +375,12 @@ label artist_part_1:
 
     #hide art_image_maya
     
-    show artist explain
+    show artist happy
 
     a "Don't worry. I know Maya looks intense, but trust me, spend a little time in any 3D package and it becomes second nature."
 
+    show artist explain
+    
     a "I'll just take you through the basics. Astal War is a 3D game, which means that we build and animate the art assets in a program like Maya before we bring them into the game engine."
 
     show artist normal
@@ -404,7 +407,7 @@ label artist_part_1:
 
     show artist happy
 
-    a " Well, there's drawing CONCEPT ART \(That's a fun one\), there's TEXTURING the model after it's created, there's RIGGING--setting up the model so it can be animated, and ANIMATION--adding movement to the model."
+    a "Well, there's drawing CONCEPT ART \(That's a fun one\), there's TEXTURING the model after it's created, there's RIGGING--setting up the model so it can be animated, and ANIMATION--adding movement to the model."
 
     "She waves her hands excitedly as she talks, and I wonder if all 3D artists get this animated when talking about animation. It's obviously something she's passionate about, and I'd like to find out more..."
 
@@ -429,6 +432,9 @@ label artist_part_1:
     hide artist explain
 
 label art_question_1:
+    show artist normal at right
+    with move
+    
     menu:
         "Modeling":
             jump art_wrong_1
@@ -441,12 +447,16 @@ label art_question_1:
 
 
 label art_right_1:
-    show artist happy
+    show artist happy at center
+    with move
+    
     a "Bingo! Sorry for the info overload, just wanted to make sure I wasn't rambling too fast for ya."
     jump art_part_2
 
 label art_wrong_1:
-    show artist explain
+    show artist explain at center
+    with move
+    
     a "Mmm, not quite, try again."
     jump art_question_1
 
@@ -473,6 +483,9 @@ label art_part_2:
     hide artist explain
 
 label art_question_2:
+    show artist normal at right
+    with move
+    
     menu:
         "joints":
             jump art_right_2
@@ -484,11 +497,16 @@ label art_question_2:
             jump art_wrong_2
         
 label art_right_2:
-    show artist happy
+    show artist happy at center
+    with move
+    
     a "Right on the money. Joints make everything all bendy and bouncy and great!"
     jump art_part_3
+
 label art_wrong_2:
-    show artist explain
+    show artist explain at center
+    with move
+    
     a "Not quite. I'll give you another guess."
     jump art_question_2
 
@@ -504,9 +522,12 @@ label art_part_3:
     
     #hide art_image_grapheditor
     #show 
-    a "So basically the graph editor a tool mostly tor?"
+    a "So basically the graph editor a tool mostly for..."
 
 label art_question_3:
+    show artist normal at right
+    with move
+    
     menu:
         "Optimizing the topology of the model":
             jump art_wrong_3
@@ -517,12 +538,17 @@ label art_question_3:
         "Organizing the nodes of the scene":
             jump art_wrong_3
         
-label art_right_2:
-    show artist happy
+label art_right_3:
+    show artist happy at center
+    with move
+    
     a "You got it."
     jump art_part_4
-label art_wrong_2:
-    show artist explain
+
+label art_wrong_3:
+    show artist explain at center
+    with move
+    
     a "Yeah, well, not really. There are other tools to do that."
     jump art_question_3
 
@@ -545,6 +571,7 @@ label art_part_4:
     a "So okay, I've probably just about talked your ear off. I'll let you get back to your studio tour, but if you wanna come back and learn more, I'll be right here."
 
     hide artist normal
+    with dissolve
 
     "As I walk away, Maeve gets absorbed in her work. I see her doing a weird motion with her arm, like she is testing the way her elbow bends, and then goes to make adjustments to the character on the screen." 
 
