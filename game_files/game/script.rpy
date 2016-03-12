@@ -19,9 +19,9 @@ image sample_script_2 = Image("sample_script_2.png", yalign=0.25)
 image textframe = "textframe.jpg"
 
 # Characters
-define p = Character('Serena', color="#00ff00")
-define a = Character('Artist', color="#00ff00")
-define d = Character('Designer', color="#00ff00")
+define p = Character('Serena', color="#e30000")
+define a = Character('Artist', color="#e3a000")
+define d = Character('Designer', color="#6100e3")
 define i = Character("[povname]", color="#00ff00")
 
 
