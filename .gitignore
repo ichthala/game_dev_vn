@@ -1,6 +1,6 @@
 game_files/traceback.txt
 game_files/tmp/
-game_files/game/saves/*.save
+game_files/game/saves/
 game_files/game/cache/
 game_files/game/*.rpyc
 game_files/log.txt
