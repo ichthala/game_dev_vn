@@ -47,7 +47,7 @@ init -1 python hide:
         widget = "#000000",
 
         ## The color of a focused widget face.
-        widget_hover = "#6A7183",
+        widget_hover = "#404040",
 
         ## The color of the text in a widget.
         widget_text = "#00ff00",
@@ -57,10 +57,10 @@ init -1 python hide:
         widget_selected = "#E3E3E4",
 
         ## The color of a disabled widget face.
-        disabled = "#ADB9CC",
+        disabled = "#404040",
 
         ## The color of disabled widget text.
-        disabled_text = "#DFBA14",
+        disabled_text = "#ADB9CC",
 
         ## The color of informational labels.
         label = "#00ff00",
@@ -76,7 +76,7 @@ init -1 python hide:
         ## The background of the game menu. This can be a color
         ## beginning with '#', or an image filename. The latter
         ## should take up the full height and width of the screen.
-        gm_root = "#F7F7FA",
+        gm_root = "#404040",
 
         ## If this is True, the in-game window is rounded. If False,
         ## the in-game window is square.

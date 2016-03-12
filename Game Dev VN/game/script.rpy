@@ -31,6 +31,7 @@ label start:
 
     # Programmer Introduction Starts
     scene bg office
+    with dissolve
 
     "It’s 9:55 a.m. on the first day of my internship at GameCompany. They told me to be here at 10… The office is locked. No one is here yet."
 
