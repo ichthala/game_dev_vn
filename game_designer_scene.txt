@@ -1,25 +1,106 @@
-"???" "Hey there. I understand you're the new apprentice?"
+label designer_start
+    "???" "Hey there. I understand you're the new apprentice?"
 
-i "That's me."
+    i "That's me."
 
-"???" "Fantastic. I'm Angela. I'm a game designer for Astral War."
+    "???" "Fantastic. I'm Angela. I'm the lead designer for Astral War."
 
-d "I just wanted to check in and see if you had any questions for me."
+    d "I just wanted to check in and see if you had any questions for me."
 
-i "I do have a question, actually."
+    i "I do have a question, actually."
 
-d "What is it?"
+    d "What is it?"
 
-i "Well, er, what exactly... do you..."
+    i "Well, er, what exactly... do you..."
 
-i "...do?"
+    i "...do?"
 
-"Angela laughs."
+    "Angela laughs."
 
-d "That's actually a very good question. Game designers do a lot of things. One of my favorite things about this job is that I don't have a typical working day."
+    d "That's actually a very good question. Game designers do a lot of things. One of my favorite things about this job is that I don't have a typical working day."
 
-"She glances down at her smart watch."
+    "She glances down at her smart watch."
 
-d "It looks like I have a few minutes before my 3 o'clock meeting. Why don't we sit at the lunch table and I'll try to give you a real answer?"
+    d "It looks like I have a few minutes before my 3 o'clock meeting. Why don't we sit at the lunch table and I'll try to give you a real answer?"
 
-i "I'd love that!"
+    i "I'd love that!"
+
+    "We sit down at the table together. It's kind of refreshing having face-to-face conversation for a bit, rather than looking at a screen."
+
+    d "So the first thing to understand about game design is that it goes way beyond video games."
+
+    d "In fact, I got my start designing board games up in Montreal."
+
+    i "Wow. I never thought about it that way, but it makes perfect sense."
+
+    d "I'm glad you say that. Most people think that game design is programming and art. But in fact, the programmers and artists are just the minions who carry out my demands."
+
+    p "I heard that!"
+
+    show designer happy
+
+    d "Much to Serena's chagrin."
+
+    d "So first let's talk about the game design process."
+
+    d "It all starts with research. My undergrad degree is in History and I have a Master's in Musicology, so I know quite a lot about research."
+
+    i "That's a pretty interesting background for a game designer."
+
+    d "It's more common than you might think. The best training for a game designer is a broad base of knowledge, plus a little bit of coding, writing, and art."
+
+    d "I've worked really hard to be proficient in all of those skills. I'm not expert—that's what people like Serena and Maeve are for—but I'm good enough to communicate my intentions through prototypes or sketches."
+
+    d "After we've gathered a lot of research, the next stage is brainstorming and coming up with the initial concept."
+
+    d "Part of that step is adding constraints: we have deadlines, a budget, limits to our technical abilities. But often, constraints can actually make the creative process easier."
+
+    d "We take an iterative approach here, which means we do a lot of rapid protoyping to get feedback on our changes as quickly as possible."
+
+    d "We iterate on the prototype many, many times before we move on to the implementation stage—that is, building the actual game. Then we iterate on the implementation, too."
+
+    d "That way, we don't invest a lot of time in implementing a rule that people won't like."
+
+    i "A rule?"
+
+    d "Yes. I'm using the term broadly. That brings us to some of the core principles of game design: What are the most basic elements of a game?"
+
+    d "What do you think?"
+
+label designer_question_1
+menu:
+    "Graphics, sound, textures.":
+        jump designer_wrong_1_graphics
+    "Narrative, characters, endings.":
+        jump designer_wrong_1_narrative
+    "Players, objectives, rules.":
+        jump designer_right_1
+    "Levels, puzzles, combat.":
+        jump designer_wrong_1_levels
+
+label designer_wrong_1_graphics:
+    d "Not exactly. Those are all bells and whistles on top of the gameplay. Try again."
+    jump designer_question_1
+
+label designer_wrong_1_narrative:
+    d "Well, no. Those things help you form an emotional connection to the game."
+    d "They can influence the gameplay, but they aren't the gameplay itself. Try again."
+    jump designer_question_1
+
+label designer_wrong_1_levels:
+    d "You're not wrong, exactly. Those are all things game designers work on."
+    d "But they aren't the core elements of a game. Think more basic."
+    jump designer_question_1
+
+label designer_right_1:
+    d "That's it!"
+
+
+
+
+
+
+
+
+
+
