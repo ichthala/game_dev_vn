@@ -1,0 +1,25 @@
+"???" "Hey there. I understand you're the new apprentice?"
+
+i "That's me."
+
+"???" "Fantastic. I'm Angela. I'm a game designer for Astral War."
+
+d "I just wanted to check in and see if you had any questions for me."
+
+i "I do have a question, actually."
+
+d "What is it?"
+
+i "Well, er, what exactly... do you..."
+
+i "...do?"
+
+"Angela laughs."
+
+d "That's actually a very good question. Game designers do a lot of things. One of my favorite things about this job is that I don't have a typical working day."
+
+"She glances down at her smart watch."
+
+d "It looks like I have a few minutes before my 3 o'clock meeting. Why don't we sit at the lunch table and I'll try to give you a real answer?"
+
+i "I'd love that!"
