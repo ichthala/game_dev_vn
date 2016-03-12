@@ -1,6 +1,6 @@
 Game\ Dev\ VN/traceback.txt
 Game\ Dev\ VN/tmp/
-Game\ Dev\ VN/game/saves/
+Game\ Dev\ VN/game/saves/*.save
 Game\ Dev\ VN/game/cache/
 Game\ Dev\ VN/log.txt
 Game\ Dev\ VN/errors.txt
