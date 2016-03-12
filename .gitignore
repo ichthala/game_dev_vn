@@ -1,7 +1,7 @@
-Game\ Dev\ VN/traceback.txt
-Game\ Dev\ VN/tmp/
-Game\ Dev\ VN/game/saves/*.save
-Game\ Dev\ VN/game/cache/
-Game\ Dev\ VN/game/*.rpyc
-Game\ Dev\ VN/log.txt
-Game\ Dev\ VN/errors.txt
+game_files/traceback.txt
+game_files/tmp/
+game_files/game/saves/*.save
+game_files/game/cache/
+game_files/game/*.rpyc
+game_files/log.txt
+game_files/errors.txt
