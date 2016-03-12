@@ -1,4 +1,4 @@
-﻿## This file contains some of the options that can be changed to customize
+## This file contains some of the options that can be changed to customize
 ## your Ren'Py game. It only contains the most common options... there
 ## is quite a bit more customization you can do.
 ##
@@ -154,9 +154,10 @@ init -1 python hide:
     ## Note that these only change the size of some of the text. Other
     ## buttons have their own styles.
     
-    ## The default color of text.
-     
-    style.default.color = "#00ff00"
+    
+    ##Default font color
+    
+    style.default.color = "00ff00"
     
     ##Style for Character Name
     
