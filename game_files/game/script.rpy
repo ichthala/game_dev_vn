@@ -161,7 +161,6 @@ label start:
 
     p "So what type of data do you think the item count column would be?"
 
-
 label programmer_question_1:
     hide programmer
     with dissolve
@@ -170,7 +169,6 @@ label programmer_question_1:
 
     show programmer normal at right
     with move
-
 
     menu:
         "Floating-point number.":
@@ -550,7 +548,7 @@ label art_part_4:
 
     "As I walk away, Maeve gets absorbed in her work. I see her doing a weird motion with her arm, like she is testing the way her elbow bends, and then goes to make adjustments to the character on the screen."
 
-    "Animators are kinda...different."
+    "Animators are kinda... different."
 
     "I think about if I want to do more of this stuff going forward."
 

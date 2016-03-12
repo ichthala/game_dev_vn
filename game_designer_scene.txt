@@ -21,7 +21,7 @@ label designer_start
 
     "She glances down at her smart watch."
 
-    d "It looks like I have a few minutes before my 3 o'clock meeting. Why don't we sit at the lunch table and I'll try to give you a real answer?"
+    d "It looks like I have a few minutes before my 12 o'clock meeting. Why don't we sit at the lunch table and I'll try to give you a real answer?"
 
     i "I'd love that!"
 
@@ -93,7 +93,182 @@ label designer_wrong_1_levels:
     jump designer_question_1
 
 label designer_right_1:
-    d "That's it!"
+    d "Great answer! Players, objectives, and rules are three of the formal elements of gameplay."
+
+    d "There are several possible types of player structures. Here at Meteoric, all our games are single-player, which means they have a player structure called solitaire."
+
+    i "Like the card game?"
+
+    d "Exactly. Just like a single-player video game, solitaire involves a single actor interacting with the game system."
+
+    d "Another player structure is PvE, player vs. environment, where multiple players are pitted against the game system cooperatively. Some MMOs fit that category."
+
+    d "And other MMOs fit a different category: PvP, also called a free-for-all, which is player vs. player vs. player and so on."
+
+    d "Can you give me an example of a game and tell me what its player structure is?"
+
+label designer_question_2:
+    menu:
+        "Hide and seek is PvE.":
+            jump designer_wrong_2_hideseek
+        "Monopoly is a free-for-all":
+            jump designer_right_2:
+        "Blackjack is head-to-head, one player vs. another.":
+            jump designer_wrong_2_blackjack:
+
+label designer_wrong_2_hideseek:
+    d "Hide and seek is kind of a complicated example, but it isn't PvE because players aren't all on the same side."
+    d "Since one person is \"it\" and everyone else is trying to hide from them, it's more like a one-against-many structure."
+    d "Try again with another game."
+    jump label_designer_question_2
+
+label designer_wrong_2_blackjack:
+    d "Close! But actually, in blackjack, all of the dealer's moves are deterministic. So it's more like player vs. game system."
+    d "Try again with a different example."
+
+label designer_right_2:
+    d "Exactly. Monopoly is an example of a free-for-all game."
+
+    d "So, you have the player structure, then you have the objectives, or the conditions for winning and losing."
+
+    d "There are many different types of winning conditions, as you probably know. In narrative video games like the ones we do at Meteroic, this tends to be simple: make it to the end of the game."
+
+    d "But there are also games where the winning condition is controlling a certain amount of territory or collecting a certain amount of currency."
+
+    d "Players achieve objectives by making decisions within the constraints of the game rules, or mechanics."
+
+    d "Game mechanics are the biggest part of my job. Once we have our first prototype, the rest of the process is spent tweaking, refining, and balancing the mechanics."
+
+    d "I need to consider things like modulating difficulty as the game progresses, providing appropriate rewards for player skill, whether the game mechanics support the narrative or feel out of place, and of course, whether or not the game is fun."
+
+    d "Then again, fun isn't a requirement for all game design."
+
+    d "Have you ever heard of Pathologic? It's not a fun game at all, but it's genius. And it's a great example of mechanics that blend seamlessly with the narrative."
+
+    i "I haven't heard of it. I'll check it out."
+
+    d "I highly recommend you do. There's also an episode of Extra Credits called Narrative Mechanics that dives a little deeper into the relationship between, well, narrative and mechanics."
+
+    d "So, that was a pretty long answer to your question, but did I answer it adequately? Do you know what a game designer does now?"
+
+label designer_question_3:
+    menu:
+        "Yeah. They design and iterate on gameplay mechanics.":
+            jump designer_right_3
+        "Yeah. They come up with ideas for games.":
+            jump designer_wrong_3
+        "Yeah. They create the characters and game world.":
+            jump designer_wrong_3
+        "Yeah. They tell programmers and artists what to do.":
+            jump designer_wrong_3
+
+label designer_wrong_3:
+    d "That's not really the heart of a game designer's job. Do you remember the other stuff we talked about?"
+
+label designer_right_3:
+    d "That's right! You learned well."
+
+    d "Alright, looks like it's time for my 12 o'clock. I'll bring you over to Melinda first so you can get your formal orientation."
+
+    "I spend the rest of the day with Melinda, the producer, learning more about Meteoric's current projects."
+
+    "At the end of the day, looking back on what I learned about game design, I think to myself..."
+
+menu:
+    "It seemed really cool.":
+        jump endings
+    "It was just okay.":
+        jump endings
+    "I don't think it's my thing.":
+        jump endings
+
+label endings:
+    "The next day, when I sit down at lunch table with my food, I'm joined by an unexpected visitor."
+
+label programmer_ending:
+    p "Hey girl. Hope you don't mind me invading your space, because I'm about to."
+
+    "Serena sits down next to me."
+
+    i "Of course not. How are you, Serena?"
+
+    p "Peachy. I was just thinking, you seemed pretty interested in codeworld yesterday, and you took to it pretty fast."
+
+    p "We have a little bandwidth right now for training. If you want, I could talk to Melinda about working some engineering into your internship."
+
+    p "I can't guarantee you'll be a pro by the time you leave, but we'll def teach you enough that you can push a bugfix or two into the Astral War repo."
+
+    p "What do you say?"
+
+    i "I'd love that! Thank you so much, Serena!"
+
+    p "Awesome, I'll run it by her this afternoon. In the meantime, let's talk cats."
+
+    "I spent the rest of the summer helping Melinda get Astral War out the door. But as the months wore on and May turned to August, I found myself spending more and more time with Serena's team."
+
+    "Serena took me under her wing and taught me so much more about programming than I ever thought possible in just one summer."
+
+    "This fall, I'm planning on adding some Computer Science classes to my schedule. Serena says I might even be able to place out of CS101, the introductory course for the major."
+
+    "Who knows? Maybe code will turn out to be my lifelong passion."
+
+    return
+
+label artist_ending:
+    show artist happy
+
+    a "OMG HIIII [povname]!"
+
+    show artist normal
+
+    "She looks down at my lunch."
+
+    a "Ooh that looks tasty! I'm jealous."
+
+    i "Thanks."
+
+    show artist happy
+
+    a "Yeah!"
+
+    i "..."
+
+    i "So..."
+
+    i "What's up?"
+
+    show artist normal
+
+    a "Oh, right! I was wondering if you wanted to be under my wings?"
+
+    i "What?"
+
+    a "You know what I mean. I could teach you some stuff. About art. While you're here."
+
+    a "I'll ask Melinda if I can borrow you sometimes, and you can help on the art side."
+
+    a "It seemed like you were interested, so I thought I'd at least ask. What do you think?"
+
+    i "I'd be honored. Thank you so much, Maeve."
+
+    a "No prob. I'll talk to Melinda about it later today."
+
+    a "In the meantime, let's eat!"
+
+    "I spent the rest of the summer helping Melinda get Astral War out the door. But as the months wore on and May turned to August, I found myself spending more and more time \"under Maeve's wings,\" as she would say."
+
+    "Maeve and her team taught me so much more about art and animation than I ever thought possible in just one summer."
+
+    "This fall, I'm planning on adding some Visual Arts classes to my schedule. I might even take night classes in 3D Animation at the art school downtown."
+
+    "Who knows? Maybe animation will turn out to be my lifelong passion."
+
+    return
+
+label designer_ending:
+    d "Placeholder thing."
+
+    return
 
 
 
