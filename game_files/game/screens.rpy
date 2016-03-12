@@ -10,7 +10,9 @@
 #
 # Screen that's used to display adv-mode dialogue.
 # http://www.renpy.org/doc/html/screen_special.html#say
-screen say(who, what, side_image=None, two_window=False):
+screen say(who, what, side_image, two_window=False):
+    
+
 
     # Decide if we want to use the one-window or two-window variant.
     if not two_window:
@@ -68,7 +70,7 @@ screen choice(items):
 
     window:
         style "menu_window"
-        xalign 0.5
+        xalign 0.15
         yalign 0.5
 
         vbox:
@@ -97,8 +99,8 @@ init -2:
         clear
 
     style menu_choice_button is button:
-        xminimum int(config.screen_width * 0.75)
-        xmaximum int(config.screen_width * 0.75)
+        xminimum int(config.screen_width * 0.5)
+        xmaximum int(config.screen_width * 0.5)
 
 
 ##############################################################################

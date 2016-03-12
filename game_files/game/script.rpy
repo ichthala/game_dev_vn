@@ -1,4 +1,4 @@
-﻿# Background Images
+# Background Images
 image bg office = "bgOffice.jpg"
 
 # Sprites
@@ -12,21 +12,26 @@ image designer happy = "artist_happy.png"
 image designer normal = "designer_normal.png"
 image designer explain = "designer_explain.png"
 
+
 # Non-Sprite Images
 image sample_script_1 = Image("sample_script_1.png", yalign=0.35)
 image sample_script_2 = Image("sample_script_2.png", yalign=0.25)
+image textframe = "textframe.jpg"
 
 # Characters
-define p = Character('Serena', color="#c8c8ff")
-define a = Character('Artist', color="#c8c8ff")
-define d = Character('Designer', color="#c8c8ff")
-define i = Character("[povname]", color="#c8c8ff")
+define p = Character('Serena', color="#00ff00")
+define a = Character('Artist', color="#00ff00")
+define d = Character('Designer', color="#00ff00")
+define i = Character("[povname]", color="#00ff00")
+
+
 
 # The game starts here.
 label start:
 
     # Programmer Introduction Starts
     scene bg office
+    with dissolve
 
     "It’s 9:55 a.m. on the first day of my internship at GameCompany. They told me to be here at 10… The office is locked. No one is here yet."
 
@@ -43,6 +48,9 @@ label start:
     "When I turn around, I almost collide with a woman coming up the office stairs. I give a little yell, but the woman just laughs."
 
     show programmer happy
+    with dissolve
+    
+    show textframe
 
     "???" "I guess you’re the fresh blood."
 
@@ -94,9 +102,9 @@ label start:
 
     i "Um..."
 
-    "The truth is, I'm not really sure. I got this internship because I made a short documentary about competitive gaming for school, and the hiring manager, Ayla, loved it."
+    i "The truth is, I'm not really sure. I got this internship because I made a short documentary about competitive gaming for school, and the hiring manager, Ayla, loved it."
 
-    "I know I want to work in games, but I don't have any experience yet. The whole point of this internship is to try and figure out exactly what I want to do."
+    i "I know I want to work in games, but I don't have any experience yet. The whole point of this internship is to try and figure out exactly what I want to do."
 
     i "I think I'm going to be reporting to one of the producers, but Ayla said I'll have room to explore a lot of different options while I'm here."
 
@@ -114,11 +122,19 @@ label start:
 
     i "Um..."
 
+    hide programmer
+
     "She sits down at a desk that's nearly empty except for a mug that says \"Animal Haven\" on it. Then she pulls up an extra chair."
+
+    show programmer normal
 
     p "Have a seat and we'll get started."
 
+    hide programmer
+
     "I sit down next to her, feeling a little nervous. She opens up a program that looks kind of like Notepad, but more intense."
+
+    show programmer explain
 
     p "So, programs are sequences of instructions that change the computer's data. That's all a program really is: data, and instructions that modify data."
 
@@ -130,7 +146,11 @@ label start:
 
     p "Then, the third column lists how many of that item you have."
 
+    hide programmer
+
     "I imagine the spreadsheet in my head..."
+
+    show programmer explain
 
     p "So the first column, the name, that's a piece of data. And the type of the data is text. In programming, though, we call that a string."
 
@@ -138,7 +158,17 @@ label start:
 
     p "So what type of data do you think the item count column would be?"
 
+
 label programmer_question_1:
+    hide programmer
+    with dissolve
+    
+    scene bg office
+    
+    show programmer normal at right
+    with move
+    
+    
     menu:
         "Floating-point number.":
             jump programmer_wrong_1
@@ -150,6 +180,8 @@ label programmer_question_1:
             jump programmer_wrong_number
 
 label programmer_wrong_1:
+    show programmer explain at right
+    
     p "Not quite. Why don't you try again?"
     jump programmer_question_1
 
@@ -158,23 +190,38 @@ label programmer_wrong_number:
     jump programmer_question_1
 
 label programmer_right_1:
+    scene bg office
+    with dissolve
+    
     show programmer happy
 
     p "That's right. Great job! The item count would be an integer."
 
-    show programmer normal
+    show programmer explain
 
     p "If I wanted to declare an integer in code, I'd write this:"
 
+    hide programmer
+
     "She types into the program: int count;"
+    
+    show programmer explain
 
     p "To declare a String, I'd write this."
 
+    hide programmer
+
     "She types: String name;"
+    
+    show programmer explain
 
     p "And a floating-point number looks like this:"
+    
+    hide programmer
 
     "float value;"
+    
+    show programmer explain
 
     p "Okay, now I'm going to jump ahead a bit. Give me a minute..."
 
@@ -185,6 +232,9 @@ label programmer_right_1:
 
 label programmer_question_2:
     hide sample_script_1
+    show programmer normal at right
+    with move
+    
     menu:
         "Plain Crossbow":
             jump programmer_wrong_2
@@ -197,10 +247,15 @@ label programmer_question_2:
 
 label programmer_wrong_2:
     show sample_script_1
+    hide programmer
+    
     p "Not quite. Why don't you try again?"
     jump programmer_question_2
 
 label programmer_right_2:
+    hide programmer
+    with dissolve
+    
     show programmer happy
     p "Great job. Now let's try something else..."
     hide programmer
@@ -209,6 +264,10 @@ label programmer_right_2:
 
 label programmer_question_3:
     hide sample_script_2
+    
+    show programmer normal at right
+    with move
+    
     menu:
         "3":
             jump programmer_wrong_3
@@ -221,10 +280,15 @@ label programmer_question_3:
 
 label programmer_wrong_3:
     show sample_script_2
+    hide programmer
+    
     p "Not quite. Why don't you try again?"
     jump programmer_question_3
 
 label programmer_right_3:
+    scene bg office
+    with dissolve
+    
     show programmer happy
 
     p "Awesome! See, that's all there is to it."
@@ -236,20 +300,27 @@ label programmer_right_3:
     p "Well, no. It gets a lot more complicated than that. But these are the building blocks for everything that comes after."
 
     p "We got through all the basics, and I haven't even had my morning coffee yet. Why don't I show you around the kitchen?"
+    
+    hide programmer
 
     "She picks up the mug from her desk."
+    
+    show programmer normal
 
     i "What's Animal Haven?"
 
     p "Oh, that's the animal shelter where I volunteer on the weekends. If you like animals, you should join me some time. We could use the help."
+    
+    hide programmer
+    with dissolve
 
     "She shows me around the kitchen: snacks, coffee machine, water cooler. I'm starting to really like this place."
-
-    hide programmer
+    
 
     "Looking back on what I learned about programming, I think to myself..."
 
 menu:
+    
     "It seemed really cool.":
         jump proceed_from_programmer_feelings
     "It was just okay.":
