@@ -349,18 +349,18 @@ label artist_part_1:
     i "Are you a dancer? Neat!"
 
     show artist happy
-    
+
     "???" "Yeah, ballroom and Latin! Kinda my main hobby, working on movement when I'm not working on movement..."
-    
+
     show artist normal
-    
+
     "???" "But, wait, wait, back up. Are you the intern they told us about?"
 
     i "Yup, that's me."
 
     a "Nice to meetcha! I'm Maeve--I'm the art lead on Astral War. You studying animation?"
 
-    i "I'm kind of trying a little bit of everything right now. I guess I I'm not really sure yet what I want to specialize in."
+    i "I'm kind of trying a little bit of everything right now. I guess I'm not really sure yet what I want to specialize in."
 
     a "I getcha--the generalist path! You interested in helping out on the art side of things?"
 
@@ -373,12 +373,12 @@ label artist_part_1:
     "My face must reflect something of the consternation I feel, because Maeve glances over at me and laughs."
 
     #hide art_image_maya
-    
+
     show artist explain
 
     a "Don't worry. I know Maya looks intense, but trust me, spend a little time in any 3D package and it becomes second nature."
 
-    a "I'll just take you through the basics. Astal War is a 3D game, which means that we build and animate the art assets in a program like Maya before we bring them into the game engine."
+    a "I'll just take you through the basics. Astral War is a 3D game, which means that we build and animate the art assets in a program like Maya before we bring them into the game engine."
 
     show artist normal
 
@@ -391,7 +391,7 @@ label artist_part_1:
     i "Polygons? Like shapes?"
 
     show artist explain
-    
+
     a "Every 3D model in a game is composed of a mesh of little many shapes called POLYGONS which the engine calculates and draws. If you look at a game model's polygons, it looks like it is covered with a net of little squares, a \"wireframe.\""
 
     i "So when people talk about \"polycount,\" they are talking about how many of those square shapes there are?"
@@ -404,14 +404,14 @@ label artist_part_1:
 
     show artist happy
 
-    a " Well, there's drawing CONCEPT ART \(That's a fun one\), there's TEXTURING the model after it's created, there's RIGGING--setting up the model so it can be animated, and ANIMATION--adding movement to the model."
+    a "Well, there's drawing CONCEPT ART \(That's a fun one\), there's TEXTURING the model after it's created, there's RIGGING--setting up the model so it can be animated, and ANIMATION--adding movement to the model."
 
     "She waves her hands excitedly as she talks, and I wonder if all 3D artists get this animated when talking about animation. It's obviously something she's passionate about, and I'd like to find out more..."
 
-    i "So...Texturing?"
-    
+    i "So... texturing?"
+
     show artist normal
-    
+
     a "It's like painting on top of the model--a flat image that is wrapped around the shape to give it color and texture."
 
     #show art_image_texture
@@ -434,7 +434,7 @@ label art_question_1:
             jump art_wrong_1
         "Texturing":
             jump art_right_1
-        "Riggin":
+        "Rigging":
             jump art_wrong_1
         "Animation":
             jump art_wrong_1
@@ -451,24 +451,24 @@ label art_wrong_1:
     jump art_question_1
 
 label art_part_2:
-    
+
     show artist normal
-    
+
     i "And you said rigging was like setting up the character?"
 
     #show art_image_rig
 
     a "Yeah, it's getting it ready for animation, by putting joints inside it. Giving a character a \"skeleton\" and controls for the animator to move. It's like adding strings to a puppet!"
 
-    i "A skeleton? Heehee...spooky!"
+    i "A skeleton? Heehee... spooky!"
 
     #hide art_image_rig
-    
+
     show artist explain
-    
+
     a "Think of it this way. If a model is like a body, and a texture is the body's skin, then rigging is like the bones and muscles inside the body that allow it to move."
 
-    a "like, if you wanted to make a character's leg bend, what would you need to create?"
+    a "Like, if you wanted to make a character's leg bend, what would you need to create?"
 
     hide artist explain
 
@@ -482,11 +482,12 @@ label art_question_2:
             jump art_wrong_2
         "wireframes":
             jump art_wrong_2
-        
+
 label art_right_2:
     show artist happy
     a "Right on the money. Joints make everything all bendy and bouncy and great!"
     jump art_part_3
+
 label art_wrong_2:
     show artist explain
     a "Not quite. I'll give you another guess."
@@ -501,9 +502,9 @@ label art_part_3:
     a "I set keyframes on the character to define some important poses and then I open this menu, the trusty graph editor, to control the motion between those two poses."
 
     a "Timing, spacing--these curves represent the movement and rotation of all the character controls."
-    
+
     #hide art_image_grapheditor
-    #show 
+    #show
     a "So basically the graph editor a tool mostly tor?"
 
 label art_question_3:
@@ -516,28 +517,29 @@ label art_question_3:
             jump art_right_3
         "Organizing the nodes of the scene":
             jump art_wrong_3
-        
+
 label art_right_2:
     show artist happy
     a "You got it."
     jump art_part_4
+
 label art_wrong_2:
     show artist explain
     a "Yeah, well, not really. There are other tools to do that."
     jump art_question_3
 
 label art_part_4:
-    
-    show artist normal
-    
-    a "In games we often make short loops of movement that can be played seamlessly over and over as the player controls the characters. Cycles--Walking, running, that sort of thing."
 
-    a "There's not a lot different in principle from animating on paper, just like in the old days. We still focus on creating the illusion of movement on frame at a time." 
+    show artist normal
+
+    a "In games we often make short loops of movement that can be played seamlessly over and over as the player controls the characters. Cycles: walking, running, that sort of thing."
+
+    a "There's not a lot different in principle from animating on paper, just like in the old days. We still focus on creating the illusion of movement on frame at a time."
 
     i "The Illusion of Life. I've got that textbook."
 
     show artist happy
-    
+
     a "OMG, have you read it? It's like my favorite reference book ever. Those old men really knew their stuff."
 
     show artist normal
@@ -546,7 +548,7 @@ label art_part_4:
 
     hide artist normal
 
-    "As I walk away, Maeve gets absorbed in her work. I see her doing a weird motion with her arm, like she is testing the way her elbow bends, and then goes to make adjustments to the character on the screen." 
+    "As I walk away, Maeve gets absorbed in her work. I see her doing a weird motion with her arm, like she is testing the way her elbow bends, and then goes to make adjustments to the character on the screen."
 
     "Animators are kinda...different."
 
