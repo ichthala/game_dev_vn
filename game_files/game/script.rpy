@@ -20,8 +20,8 @@ image textframe = "textframe.jpg"
 
 # Characters
 define p = Character('Serena', color="#00ff00")
-define a = Character('Artist', color="#00ff00")
-define d = Character('Designer', color="#00ff00")
+define a = Character('Maeve', color="#00ff00")
+define d = Character('Angela', color="#00ff00")
 define i = Character("[povname]", color="#00ff00")
 
 
@@ -49,7 +49,7 @@ label start:
 
     show programmer happy
     with dissolve
-    
+
     show textframe
 
     "???" "I guess you’re the fresh blood."
@@ -162,13 +162,13 @@ label start:
 label programmer_question_1:
     hide programmer
     with dissolve
-    
+
     scene bg office
-    
+
     show programmer normal at right
     with move
-    
-    
+
+
     menu:
         "Floating-point number.":
             jump programmer_wrong_1
@@ -181,7 +181,7 @@ label programmer_question_1:
 
 label programmer_wrong_1:
     show programmer explain at right
-    
+
     p "Not quite. Why don't you try again?"
     jump programmer_question_1
 
@@ -192,7 +192,7 @@ label programmer_wrong_number:
 label programmer_right_1:
     scene bg office
     with dissolve
-    
+
     show programmer happy
 
     p "That's right. Great job! The item count would be an integer."
@@ -204,7 +204,7 @@ label programmer_right_1:
     hide programmer
 
     "She types into the program: int count;"
-    
+
     show programmer explain
 
     p "To declare a String, I'd write this."
@@ -212,15 +212,15 @@ label programmer_right_1:
     hide programmer
 
     "She types: String name;"
-    
+
     show programmer explain
 
     p "And a floating-point number looks like this:"
-    
+
     hide programmer
 
     "float value;"
-    
+
     show programmer explain
 
     p "Okay, now I'm going to jump ahead a bit. Give me a minute..."
@@ -234,7 +234,7 @@ label programmer_question_2:
     hide sample_script_1
     show programmer normal at right
     with move
-    
+
     menu:
         "Plain Crossbow":
             jump programmer_wrong_2
@@ -248,14 +248,14 @@ label programmer_question_2:
 label programmer_wrong_2:
     show sample_script_1
     hide programmer
-    
+
     p "Not quite. Why don't you try again?"
     jump programmer_question_2
 
 label programmer_right_2:
     hide programmer
     with dissolve
-    
+
     show programmer happy
     p "Great job. Now let's try something else..."
     hide programmer
@@ -264,10 +264,10 @@ label programmer_right_2:
 
 label programmer_question_3:
     hide sample_script_2
-    
+
     show programmer normal at right
     with move
-    
+
     menu:
         "3":
             jump programmer_wrong_3
@@ -281,14 +281,14 @@ label programmer_question_3:
 label programmer_wrong_3:
     show sample_script_2
     hide programmer
-    
+
     p "Not quite. Why don't you try again?"
     jump programmer_question_3
 
 label programmer_right_3:
     scene bg office
     with dissolve
-    
+
     show programmer happy
 
     p "Awesome! See, that's all there is to it."
@@ -300,27 +300,27 @@ label programmer_right_3:
     p "Well, no. It gets a lot more complicated than that. But these are the building blocks for everything that comes after."
 
     p "We got through all the basics, and I haven't even had my morning coffee yet. Why don't I show you around the kitchen?"
-    
+
     hide programmer
 
     "She picks up the mug from her desk."
-    
+
     show programmer normal
 
     i "What's Animal Haven?"
 
     p "Oh, that's the animal shelter where I volunteer on the weekends. If you like animals, you should join me some time. We could use the help."
-    
+
     hide programmer
     with dissolve
 
     "She shows me around the kitchen: snacks, coffee machine, water cooler. I'm starting to really like this place."
-    
+
 
     "Looking back on what I learned about programming, I think to myself..."
 
 menu:
-    
+
     "It seemed really cool.":
         jump proceed_from_programmer_feelings
     "It was just okay.":
