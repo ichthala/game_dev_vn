@@ -22,9 +22,9 @@ image textframe = "textframe.jpg"
 #image art_image_grapheditor = Image("art_image_grapheditor.png")
 
 # Characters
-define p = Character('Serena', color="#00ff00")
-define a = Character('Maeve', color="#00ff00")
-define d = Character('Angela', color="#00ff00")
+define p = Character('Serena', color="#e30000")
+define a = Character('Maeve', color="#e3a000")
+define d = Character('Angela', color="#6100e3")
 define i = Character("[povname]", color="#00ff00")
 
 
