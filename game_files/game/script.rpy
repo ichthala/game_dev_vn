@@ -36,6 +36,7 @@ label start:
     scene bg office
     with dissolve
 
+
     "It’s 9:55 a.m. on the first day of my internship at GameCompany. They told me to be here at 10… The office is locked. No one is here yet."
 
     "Me" "Does everyone really arrive after 10…?"
@@ -87,11 +88,16 @@ label start:
 
     p "Yeah. It helps with the job."
 
+    hide programmer
+    with dissolve
+
     "She unlocks the office door, and we head in."
 
     "The office's windows are huge, letting in lots of natural light. Its design is sleek and modern, in stark contrast to the messy desks lined up along the walls."
 
     i "What do you do here?"
+
+    show programmer normal
 
     p "I'm the engineering lead for Astral War."
 
@@ -163,6 +169,7 @@ label start:
 
 
 label programmer_question_1:
+    hide textframe
     
     show programmer normal at right
     with move
@@ -234,7 +241,6 @@ label programmer_right_1:
 label programmer_question_2:
     hide sample_script_1
     show programmer normal at right
-    with move
     
     menu:
         "Plain Crossbow":
