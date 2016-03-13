@@ -36,6 +36,7 @@ label start:
     scene bg office
     with dissolve
 
+
     "It’s 9:55 a.m. on the first day of my internship at GameCompany. They told me to be here at 10… The office is locked. No one is here yet."
 
     "Me" "Does everyone really arrive after 10…?"
@@ -87,11 +88,16 @@ label start:
 
     p "Yeah. It helps with the job."
 
+    hide programmer
+    with dissolve
+
     "She unlocks the office door, and we head in."
 
     "The office's windows are huge, letting in lots of natural light. Its design is sleek and modern, in stark contrast to the messy desks lined up along the walls."
 
     i "What do you do here?"
+
+    show programmer normal
 
     p "I'm the engineering lead for Astral War."
 
@@ -162,10 +168,7 @@ label start:
     p "So what type of data do you think the item count column would be?"
 
 label programmer_question_1:
-    hide programmer
-    with dissolve
-
-    scene bg office
+    hide textframe
 
     show programmer normal at right
     with move
@@ -181,7 +184,8 @@ label programmer_question_1:
             jump programmer_wrong_number
 
 label programmer_wrong_1:
-    show programmer explain at right
+    show programmer explain at center
+    with move
 
     p "Not quite. Why don't you try again?"
     jump programmer_question_1
@@ -191,10 +195,8 @@ label programmer_wrong_number:
     jump programmer_question_1
 
 label programmer_right_1:
-    scene bg office
-    with dissolve
-
-    show programmer happy
+    show programmer happy at center
+    with move
 
     p "That's right. Great job! The item count would be an integer."
 
@@ -234,8 +236,12 @@ label programmer_right_1:
 label programmer_question_2:
     hide sample_script_1
     show programmer normal at right
+<<<<<<< HEAD
     with move
 
+=======
+
+>>>>>>> b5929847fcaedc0bc2ef0efc8f96aeb3b94e5436
     menu:
         "Plain Crossbow":
             jump programmer_wrong_2
@@ -254,10 +260,9 @@ label programmer_wrong_2:
     jump programmer_question_2
 
 label programmer_right_2:
-    hide programmer
-    with dissolve
+    show programmer happy at center
+    with move
 
-    show programmer happy
     p "Great job. Now let's try something else..."
     hide programmer
     show sample_script_2
@@ -287,10 +292,8 @@ label programmer_wrong_3:
     jump programmer_question_3
 
 label programmer_right_3:
-    scene bg office
-    with dissolve
-
-    show programmer happy
+    show programmer happy at center
+    with move
 
     p "Awesome! See, that's all there is to it."
 
@@ -321,7 +324,6 @@ label programmer_right_3:
     "Looking back on what I learned about programming, I think to myself..."
 
 menu:
-
     "It seemed really cool.":
         jump proceed_from_programmer_feelings
     "It was just okay.":
@@ -341,6 +343,7 @@ label artist_part_1:
     i "Hi!"
 
     show artist normal
+    with dissolve
 
     "???" "La--Oh, gosh! Sorry, I was just thinking about my new routine and got carried away"
 
@@ -364,6 +367,9 @@ label artist_part_1:
 
     i "I mean, I don't really know where to start."
 
+    hide artist
+    with dissolve
+
     "I follow her over to a computer, where she sits down and opens up a complicated looking program. The interface has approximately a bajillion menu options."
 
     #show art_image_maya
@@ -372,11 +378,13 @@ label artist_part_1:
 
     #hide art_image_maya
 
-    show artist explain
+    show artist happy
 
     a "Don't worry. I know Maya looks intense, but trust me, spend a little time in any 3D package and it becomes second nature."
 
-    a "I'll just take you through the basics. Astral War is a 3D game, which means that we build and animate the art assets in a program like Maya before we bring them into the game engine."
+    show artist explain
+
+    a "I'll just take you through the basics. Astal War is a 3D game, which means that we build and animate the art assets in a program like Maya before we bring them into the game engine."
 
     show artist normal
 
@@ -427,6 +435,9 @@ label artist_part_1:
     hide artist explain
 
 label art_question_1:
+    show artist normal at right
+    with move
+
     menu:
         "Modeling":
             jump art_wrong_1
@@ -437,14 +448,17 @@ label art_question_1:
         "Animation":
             jump art_wrong_1
 
-
 label art_right_1:
-    show artist happy
+    show artist happy at center
+    with move
+
     a "Bingo! Sorry for the info overload, just wanted to make sure I wasn't rambling too fast for ya."
     jump art_part_2
 
 label art_wrong_1:
-    show artist explain
+    show artist explain at center
+    with move
+
     a "Mmm, not quite, try again."
     jump art_question_1
 
@@ -471,6 +485,9 @@ label art_part_2:
     hide artist explain
 
 label art_question_2:
+    show artist normal at right
+    with move
+
     menu:
         "joints":
             jump art_right_2
@@ -482,12 +499,16 @@ label art_question_2:
             jump art_wrong_2
 
 label art_right_2:
-    show artist happy
+    show artist happy at center
+    with move
+
     a "Right on the money. Joints make everything all bendy and bouncy and great!"
     jump art_part_3
 
 label art_wrong_2:
-    show artist explain
+    show artist explain at center
+    with move
+
     a "Not quite. I'll give you another guess."
     jump art_question_2
 
@@ -503,9 +524,12 @@ label art_part_3:
 
     #hide art_image_grapheditor
     #show
-    a "So basically the graph editor a tool mostly tor?"
+    a "So basically the graph editor a tool mostly for..."
 
 label art_question_3:
+    show artist normal at right
+    with move
+
     menu:
         "Optimizing the topology of the model":
             jump art_wrong_3
@@ -516,13 +540,17 @@ label art_question_3:
         "Organizing the nodes of the scene":
             jump art_wrong_3
 
-label art_right_2:
-    show artist happy
+label art_right_3:
+    show artist happy at center
+    with move
+
     a "You got it."
     jump art_part_4
 
-label art_wrong_2:
-    show artist explain
+label art_wrong_3:
+    show artist explain at center
+    with move
+
     a "Yeah, well, not really. There are other tools to do that."
     jump art_question_3
 
@@ -545,6 +573,7 @@ label art_part_4:
     a "So okay, I've probably just about talked your ear off. I'll let you get back to your studio tour, but if you wanna come back and learn more, I'll be right here."
 
     hide artist normal
+    with dissolve
 
     "As I walk away, Maeve gets absorbed in her work. I see her doing a weird motion with her arm, like she is testing the way her elbow bends, and then goes to make adjustments to the character on the screen."
 
