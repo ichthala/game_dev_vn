@@ -231,27 +231,15 @@ label programmer_right_1:
 
     p "If I wanted to declare an integer in code, I'd write this:"
 
-    hide programmer
-
     "She types into the program: {color=[phl]}int count;{/color}"
-
-    show programmer explain
 
     p "To declare a {color=[phl]}string{/color}, I'd write this."
 
-    hide programmer
-
     "She types: {color=[phl]}String name;{/color}"
-
-    show programmer explain
 
     p "And a {color=[phl]}floating-point{/color} number looks like this:"
 
-    hide programmer
-
     "{color=[phl]}float value;{/color}"
-
-    show programmer explain
 
     p "Okay, now I'm going to jump ahead a bit. Give me a minute..."
 
@@ -401,7 +389,6 @@ label artist_part_1:
 
     show artist normal
     with dissolve
-
     "???" "La--Oh, gosh! Sorry, I was just thinking about my new routine and got carried away"
 
     i "Are you a dancer? Neat!"
