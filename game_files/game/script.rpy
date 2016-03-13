@@ -211,7 +211,7 @@ label programmer_wrong_1:
 label programmer_wrong_number:
     show programmer explain at center
     with move
-    
+
     p "Almost, but that's not specific enough. Give it another shot."
     jump programmer_question_1
 
@@ -256,11 +256,11 @@ label programmer_right_1:
 
 label programmer_question_2_first:
     hide textframe
-   
+
     hide sample_script_1
-       
+
     show programmer normal at right
-    
+
     menu:
         "Plain Crossbow":
             jump programmer_wrong_2
@@ -305,7 +305,7 @@ label programmer_question_3_first:
     hide sample_script_2
 
     show programmer normal at right
-    
+
 
     menu:
         "3":
@@ -318,7 +318,7 @@ label programmer_question_3_first:
         "0":
             jump programmer_wrong_3
 
-label programmer_question_3_first:
+label programmer_question_3:
     hide sample_script_2
 
     show programmer normal at right
@@ -592,9 +592,9 @@ label art_wrong_2:
 
 label art_part_3:
     a "And anyway, rigging gets the stuff ready for animation, which is my original background!"
-    
+
     show artist explain
-    
+
     a "Look up the 12 principles of animation. That'll get you started--same ideas hold true whether you are making animation in 2D or 3D, for games or for film."
 
     #show art_image_grapheditor
@@ -726,19 +726,19 @@ label proceed_from_artist_feelings:
     d "It looks like I have a few minutes before my 12 o'clock meeting. Why don't we sit at the lunch table and I'll try to give you a real answer?"
 
     i "I'd love that!"
-    
+
     hide designer
     with dissolve
-    
+
     "We sit down at the table together. It's kind of refreshing having face-to-face conversation for a bit, rather than looking at a screen."
-    
+
     show designer explain
     with dissolve
-    
+
     d "So the first thing to understand about game design is that it goes way beyond video games."
-    
+
     show designer normal
-    
+
     d "In fact, I got my start designing board games up in Montreal."
 
     i "Wow. I never thought about it that way, but it makes perfect sense."
@@ -787,7 +787,7 @@ label proceed_from_artist_feelings:
 label designer_question_1_first:
     show designer normal at right
     with move
-    
+
     menu:
         "Graphics, sound, textures.":
             jump designer_wrong_1_graphics
@@ -802,7 +802,7 @@ label designer_question_1_first:
 label designer_question_1:
     show designer normal at right
     with move
-    
+
     menu:
         "Graphics, sound, textures.":
             jump designer_wrong_1_graphics
@@ -816,14 +816,14 @@ label designer_question_1:
 label designer_wrong_1_graphics:
     show designer explain at center
     with move
-    
+
     d "Not exactly. Those are all bells and whistles on top of the gameplay. Try again."
     jump designer_question_1
 
 label designer_wrong_1_narrative:
     show designer explain at center
     with move
-    
+
     d "Well, no. Those things help you form an emotional connection to the game."
     d "They can influence the gameplay, but they aren't the gameplay itself. Try again."
     jump designer_question_1
@@ -831,7 +831,7 @@ label designer_wrong_1_narrative:
 label designer_wrong_1_levels:
     show designer explain at center
     with move
-    
+
     d "You're not wrong, exactly. Those are all things game designers work on."
     d "But they aren't the core elements of a game. Think more basic."
     jump designer_question_1
@@ -857,7 +857,7 @@ label designer_right_1:
 label designer_question_2_first:
     show designer at right
     with move
-    
+
     menu:
         "Hide and seek is PvE.":
             jump designer_wrong_2_hideseek
@@ -870,7 +870,7 @@ label designer_question_2_first:
 label designer_question_2:
     show designer at right
     with move
-    
+
     menu:
         "Hide and seek is PvE.":
             jump designer_wrong_2_hideseek
@@ -882,7 +882,7 @@ label designer_question_2:
 label designer_wrong_2_hideseek:
     show designer explain at center
     with move
-    
+
     d "Hide and seek is kind of a complicated example, but it isn't PvE because players aren't all on the same side."
     d "Since one person is \"it\" and everyone else is trying to hide from them, it's more like a one-against-many structure."
     d "Try again with another game."
@@ -891,7 +891,7 @@ label designer_wrong_2_hideseek:
 label designer_wrong_2_blackjack:
     show designer explain at center
     with move
-    
+
     d "Close! But actually, in blackjack, all of the dealer's moves are deterministic. So it's more like player vs. game system."
     d "Try again with a different example."
     jump designer_question_2
@@ -922,7 +922,7 @@ label designer_right_2:
 label designer_question_3_first:
     show designer at right
     with move
-    
+
     menu:
         "Yeah. They design and iterate on gameplay mechanics.":
             $ design_score += 1
@@ -937,7 +937,7 @@ label designer_question_3_first:
 label designer_question_3:
     show designer at right
     with move
-    
+
     menu:
         "Yeah. They design and iterate on gameplay mechanics.":
             jump designer_right_3
@@ -951,7 +951,7 @@ label designer_question_3:
 label designer_wrong_3:
     show designer explain at center
     with move
-    
+
     d "That's not really the heart of a game designer's job. Do you remember the other stuff we talked about?"
     show designer normal
     jump designer_question_3
@@ -959,7 +959,7 @@ label designer_wrong_3:
 label designer_right_3:
     show designer happy at center
     with move
-    
+
     d "That's right! You learned well."
     show designer normal
     d "Alright, looks like it's time for my 12 o'clock. I'll bring you over to Melinda first so you can get your formal orientation."
@@ -985,7 +985,7 @@ menu:
 label endings:
     scene bg office
     with fade
-    
+
     "The next day, when I sit down at lunch table with my food, I'm joined by an unexpected visitor."
 
     $ prog = prog_score * prog_feelings
