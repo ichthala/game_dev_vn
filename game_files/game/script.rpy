@@ -24,9 +24,8 @@ image textframe = "textframe.jpg"
 # Characters
 define p = Character('Serena', color="#e30000")
 define a = Character('Maeve', color="#e3a000")
-define d = Character('Angela', color="#6100e3")
+define d = Character('Angela', color="#7b1ff6")
 define i = Character("[povname]", color="#00ff00")
-
 
 
 # The game starts here.
@@ -34,7 +33,7 @@ label start:
 
     # Programmer Introduction Starts
     scene bg office
-    with dissolve
+    with fade
 
 
     "It’s 9:55 a.m. on the first day of my internship at Meteoric Games. They told me to be here at 10… The office is locked. No one is here yet."
@@ -54,8 +53,6 @@ label start:
     show programmer happy
     with dissolve
 
-    show textframe
-
     "???" "I guess you’re the fresh blood."
 
     show programmer normal
@@ -70,7 +67,7 @@ label start:
 
     show programmer happy
 
-    "???" "Thanks. I got this shirt in Germany last time I visited my parents. I’m Serena, by the way. And as I recall, your name is…"
+    "???" "Thanks. I got this shirt in Germany last time I visited my parents. I’m {color=#e30000}Serena{/color}, by the way. And as I recall, your name is…"
 
     #start input script
     python:
@@ -98,6 +95,7 @@ label start:
     i "What do you do here?"
 
     show programmer normal
+    with dissolve
 
     p "I'm the engineering lead for Astral War."
 
@@ -145,7 +143,7 @@ label start:
 
     show programmer explain
 
-    p "So, programs are sequences of instructions that change the computer's data. That's all a program really is: data, and instructions that modify data."
+    p "So, {color=#e30000}programs{/color} are sequences of instructions that change the computer's data. That's all a program really is: data, and instructions that modify data."
 
     p "Let's talk about data first. Imagine you're looking at a spreadsheet. And this spreadsheet lists, hmm... inventory items. Yeah, items that are in your inventory."
 
@@ -161,9 +159,9 @@ label start:
 
     show programmer explain
 
-    p "So the first column, the name, that's a piece of data. And the type of the data is text. In programming, though, we call that a string."
+    p "So the first column, the name, that's a piece of data. And the type of the data is text. In programming, though, we call that a {color=#e30000}string{/color}."
 
-    p "The monetary value would be a floating-point number, meaning it's a number that can have precision after the decimal point. Like 10.25, or 1.50."
+    p "The monetary value would be a {color=#e30000}floating-point number{/color}, meaning it's a number that can have precision after the decimal point. Like 10.25, or 1.50."
 
     p "So what type of data do you think the item count column would be?"
 
@@ -218,7 +216,7 @@ label programmer_right_1:
     show programmer happy at center
     with move
 
-    p "That's right. Great job! The item count would be an integer."
+    p "That's right. Great job! The item count would be an {color=#e30000}integer.{/color}"
 
     show programmer explain
 
@@ -226,23 +224,23 @@ label programmer_right_1:
 
     hide programmer
 
-    "She types into the program: int count;"
+    "She types into the program: {color=#e30000}int count;{/color}"
 
     show programmer explain
 
-    p "To declare a String, I'd write this."
+    p "To declare a {color=#e30000}string{/color}, I'd write this."
 
     hide programmer
 
-    "She types: String name;"
+    "She types: {color=#e30000}String name;{/color}"
 
     show programmer explain
 
-    p "And a floating-point number looks like this:"
+    p "And a {color=#e30000}floating-point{/color} number looks like this:"
 
     hide programmer
 
-    "float value;"
+    "{color=#e30000}float value;{/color}"
 
     show programmer explain
 
@@ -254,8 +252,13 @@ label programmer_right_1:
     p "So, what do you think is the value of the name variable at the end of this code segment?"
 
 label programmer_question_2_first:
+    hide textframe
+   
     hide sample_script_1
+       
     show programmer normal at right
+    with move
+    
     menu:
         "Plain Crossbow":
             jump programmer_wrong_2
@@ -300,7 +303,7 @@ label programmer_question_3_first:
     hide sample_script_2
 
     show programmer normal at right
-    with move
+    
 
     menu:
         "3":
@@ -406,7 +409,7 @@ label artist_part_1:
 
     i "Yup, that's me."
 
-    a "Nice to meetcha! I'm Maeve--I'm the art lead on Astral War. You studying animation?"
+    a "Nice to meetcha! I'm {color=#e3a000}Maeve{/color}--I'm the art lead on Astral War. You studying animation?"
 
     i "I'm kind of trying a little bit of everything right now. I guess I'm not really sure yet what I want to specialize in."
 
@@ -421,7 +424,7 @@ label artist_part_1:
 
     #show art_image_maya
 
-    "My face must reflect something of the consternation I feel, because Maeve glances over at me and laughs."
+    "My face must reflect something of the consternation I feel, because {color=#e3a000}Maeve{/color} glances over at me and laughs."
 
     #hide art_image_maya
 
@@ -445,19 +448,19 @@ label artist_part_1:
 
     show artist explain
 
-    a "Every 3D model in a game is composed of a mesh of little many shapes called POLYGONS which the engine calculates and draws. If you look at a game model's polygons, it looks like it is covered with a net of little squares, a \"wireframe.\""
+    a "Every 3D model in a game is composed of a mesh of little many shapes called {color=#e3a000}POLYGONS{/color} which the engine calculates and draws. If you look at a game model's polygons, it looks like it is covered with a net of little squares, a \"wireframe.\""
 
     i "So when people talk about \"polycount,\" they are talking about how many of those square shapes there are?"
 
     show artist normal
 
-    a "Exactly! So MODELING is the job of building game assets using polygons."
+    a "Exactly! So {color=#e3a000}MODELING{/color} is the job of building game assets using polygons."
 
     i "Sweet. So what are some of the other jobs on the art team?"
 
     show artist happy
 
-    a "Well, there's drawing CONCEPT ART \(That's a fun one\), there's TEXTURING the model after it's created, there's RIGGING--setting up the model so it can be animated, and ANIMATION--adding movement to the model."
+    a "Well, there's drawing {color=#e3a000}CONCEPT ART{/color} \(That's a fun one\), there's {color=#e3a000}TEXTURING{/color} the model after it's created, there's {color=#e3a000}RIGGING{/color}--setting up the model so it can be animated, and {color=#e3a000}ANIMATION{/color}--adding movement to the model."
 
     "She waves her hands excitedly as she talks, and I wonder if all 3D artists get this animated when talking about animation. It's obviously something she's passionate about, and I'd like to find out more..."
 
@@ -471,13 +474,13 @@ label artist_part_1:
 
     a "There are different types of texture maps that do different things for the way a model is displayed."
 
-    a "A DIFFUSE MAP provides the diffuse color of the model, a NORMAL MAP makes it bumpy, a SPECULAR MAP controls how shiny it is, and an ALPHA MAP lets the engine know which parts of the model should be rendered as transparent."
+    a "A DIFFUSE MAP provides the diffuse color of the model, a {color=#e3a000}NORMAL MAP{/color} makes it bumpy, a {color=#e3a000}SPECULAR MAP{/color} controls how shiny it is, and an {color=#e3a000}ALPHA MAP{/color} lets the engine know which parts of the model should be rendered as transparent."
 
     #hide art_image_texture
 
     show artist explain
 
-    a "So like, to double check, creating a specular map would be part of which job?"
+    a "So like, to double check, creating a {color#e3a000}specular map{/color} would be part of which job?"
 
     hide artist explain
     $ art_score = 0
@@ -527,7 +530,7 @@ label art_wrong_1:
 
 label art_part_2:
     show artist normal
-    i "And you said rigging was like setting up the character?"
+    i "And you said {color=#e3a000}rigging{/color} was like setting up the character?"
 
     #show art_image_rig
     a "Yeah, it's getting it ready for animation, by putting joints inside it. Giving a character a \"skeleton\" and controls for the animator to move. It's like adding strings to a puppet!"
@@ -588,6 +591,9 @@ label art_wrong_2:
 
 label art_part_3:
     a "And anyway, rigging gets the stuff ready for animation, which is my original background!"
+    
+    show artist explain
+    
     a "Look up the 12 principles of animation. That'll get you started--same ideas hold true whether you are making animation in 2D or 3D, for games or for film."
 
     #show art_image_grapheditor
@@ -663,7 +669,7 @@ label art_part_4:
     hide artist normal
     with dissolve
 
-    "As I walk away, Maeve gets absorbed in her work. I see her doing a weird motion with her arm, like she is testing the way her elbow bends, and then goes to make adjustments to the character on the screen."
+    "As I walk away, {color=#e3a000}Maeve{/color} gets absorbed in her work. I see her doing a weird motion with her arm, like she is testing the way her elbow bends, and then goes to make adjustments to the character on the screen."
 
     "Animators are kinda... different."
 
@@ -795,15 +801,24 @@ label designer_question_1:
             jump designer_wrong_1_levels
 
 label designer_wrong_1_graphics:
+    show designer explain at center
+    with move
+    
     d "Not exactly. Those are all bells and whistles on top of the gameplay. Try again."
     jump designer_question_1
 
 label designer_wrong_1_narrative:
+    show designer explain at center
+    with move
+    
     d "Well, no. Those things help you form an emotional connection to the game."
     d "They can influence the gameplay, but they aren't the gameplay itself. Try again."
     jump designer_question_1
 
 label designer_wrong_1_levels:
+    show designer explain at center
+    with move
+    
     d "You're not wrong, exactly. Those are all things game designers work on."
     d "But they aren't the core elements of a game. Think more basic."
     jump designer_question_1
@@ -847,12 +862,18 @@ label designer_question_2:
             jump designer_wrong_2_blackjack
 
 label designer_wrong_2_hideseek:
+    show designer explain at center
+    with move
+    
     d "Hide and seek is kind of a complicated example, but it isn't PvE because players aren't all on the same side."
     d "Since one person is \"it\" and everyone else is trying to hide from them, it's more like a one-against-many structure."
     d "Try again with another game."
     jump designer_question_2
 
 label designer_wrong_2_blackjack:
+    show designer explain at center
+    with move
+    
     d "Close! But actually, in blackjack, all of the dealer's moves are deterministic. So it's more like player vs. game system."
     d "Try again with a different example."
     jump designer_question_2
@@ -905,7 +926,9 @@ label designer_question_3:
             jump designer_wrong_3
 
 label designer_wrong_3:
-    show designer explain
+    show designer explain at center
+    with move
+    
     d "That's not really the heart of a game designer's job. Do you remember the other stuff we talked about?"
     show designer normal
     jump designer_question_3
@@ -913,6 +936,7 @@ label designer_wrong_3:
 label designer_right_3:
     show designer happy at center
     with move
+    
     d "That's right! You learned well."
     show designer normal
     d "Alright, looks like it's time for my 12 o'clock. I'll bring you over to Melinda first so you can get your formal orientation."
