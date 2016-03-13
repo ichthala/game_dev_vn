@@ -22,10 +22,11 @@ image textframe = "textframe.jpg"
 #image art_image_grapheditor = Image("art_image_grapheditor.png")
 
 # Characters
-define p = Character('Serena', color="#e30000")
+define p = Character('Serena', color="#c13383")
 define a = Character('Maeve', color="#e3a000")
 define d = Character('Angela', color="#7b1ff6")
 define i = Character("[povname]", color="#00ff00")
+
 
 
 # The game starts here.
@@ -67,7 +68,7 @@ label start:
 
     show programmer happy
 
-    "???" "Thanks. I got this shirt in Germany last time I visited my parents. I’m {color=#e30000}Serena{/color}, by the way. And as I recall, your name is…"
+    "???" "Thanks. I got this shirt in Germany last time I visited my parents. I’m {color=#c13383}Serena{/color}, by the way. And as I recall, your name is…"
 
     #start input script
     python:
