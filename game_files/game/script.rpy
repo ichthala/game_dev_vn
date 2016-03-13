@@ -723,14 +723,19 @@ label proceed_from_artist_feelings:
     "We sit down at the table together. It's kind of refreshing having face-to-face conversation for a bit, rather than looking at a screen."
 
     d "So the first thing to understand about game design is that it goes way beyond video games."
-
     d "In fact, I got my start designing board games up in Montreal."
 
     i "Wow. I never thought about it that way, but it makes perfect sense."
 
     d "I'm glad you say that. Most people think that game design is programming and art. But in fact, the programmers and artists are just the minions who carry out my demands."
 
+    show programmer normal at left
+    with moveinleft
+
     p "I heard that!"
+
+    hide programmer at left
+    with moveoutleft
 
     show designer happy
 
@@ -745,16 +750,24 @@ label proceed_from_artist_feelings:
 
     d "It's more common than you might think. The best training for a game designer is a broad base of knowledge, plus a little bit of coding, writing, and art."
     d "I've worked really hard to be proficient in all of those skills. I'm not expert—that's what people like Serena and Maeve are for—but I'm good enough to communicate my intentions through prototypes or sketches."
+
+    show designer explain
     d "After we've gathered a lot of research, the next stage is brainstorming and coming up with the initial concept."
     d "Part of that step is adding constraints: we have deadlines, a budget, limits to our technical abilities. But often, constraints can actually make the creative process easier."
     d "We take an iterative approach here, which means we do a lot of rapid protoyping to get feedback on our changes as quickly as possible."
     d "We iterate on the prototype many, many times before we move on to the implementation stage—that is, building the actual game. Then we iterate on the implementation, too."
+
+    show designer normal
     d "That way, we don't invest a lot of time in implementing a rule that people won't like."
 
     i "A rule?"
 
+    show designer explain
     d "Yes. I'm using the term broadly. That brings us to some of the core principles of game design: What are the most basic elements of a game?"
     d "What do you think?"
+
+    show designer at right
+    with move
 
     $ design_score = 0
 
@@ -796,15 +809,23 @@ label designer_wrong_1_levels:
     jump designer_question_1
 
 label designer_right_1:
+    show designer happy at center
+    with move
+
     d "Great answer! Players, objectives, and rules are three of the formal elements of gameplay."
+    show designer normal
     d "There are several possible types of player structures. Here at Meteoric, all our games are single-player, which means they have a player structure called solitaire."
 
     i "Like the card game?"
 
+    show designer explain
     d "Exactly. Just like a single-player video game, solitaire involves a single actor interacting with the game system."
     d "Another player structure is PvE, player vs. environment, where multiple players are pitted against the game system cooperatively. Some MMOs fit that category."
     d "And other MMOs fit a different category: PvP, also called a free-for-all, which is player vs. player vs. player and so on."
+    show designer normal
     d "Can you give me an example of a game and tell me what its player structure is?"
+    show designer at right
+    with move
 
 label designer_question_2_first:
     menu:
@@ -837,11 +858,17 @@ label designer_wrong_2_blackjack:
     jump designer_question_2
 
 label designer_right_2:
+    show designer happy at center
+    with move
     d "Exactly. Monopoly is an example of a free-for-all game."
+
+    show designer explain
     d "So, you have the player structure, then you have the objectives, or the conditions for winning and losing."
     d "There are many different types of winning conditions, as you probably know. In narrative video games like the ones we do at Meteroic, this tends to be simple: make it to the end of the game."
     d "But there are also games where the winning condition is controlling a certain amount of territory or collecting a certain amount of currency."
     d "Players achieve objectives by making decisions within the constraints of the game rules, or mechanics."
+
+    show designer normal
     d "Game mechanics are the biggest part of my job. Once we have our first prototype, the rest of the process is spent tweaking, refining, and balancing the mechanics."
     d "I need to consider things like modulating difficulty as the game progresses, providing appropriate rewards for player skill, whether the game mechanics support the narrative or feel out of place, and of course, whether or not the game is fun."
     d "Then again, fun isn't a requirement for all game design."
@@ -851,6 +878,8 @@ label designer_right_2:
 
     d "I highly recommend you do. There's also an episode of Extra Credits called Narrative Mechanics that dives a little deeper into the relationship between, well, narrative and mechanics."
     d "So, that was a pretty long answer to your question, but did I answer it adequately? Do you know what a game designer does now?"
+    show designer at right
+    with move
 
 label designer_question_3_first:
     menu:
@@ -876,12 +905,20 @@ label designer_question_3:
             jump designer_wrong_3
 
 label designer_wrong_3:
+    show designer explain
     d "That's not really the heart of a game designer's job. Do you remember the other stuff we talked about?"
+    show designer normal
     jump designer_question_3
 
 label designer_right_3:
+    show designer happy at center
+    with move
     d "That's right! You learned well."
+    show designer normal
     d "Alright, looks like it's time for my 12 o'clock. I'll bring you over to Melinda first so you can get your formal orientation."
+
+    hide designer
+    with dissolve
 
     "I spend the rest of the day with Melinda, the producer, learning more about Meteoric's current projects."
 
@@ -915,6 +952,7 @@ label endings:
         jump designer_ending
 
 label programmer_ending:
+    show programmer normal
     p "Hey girl. Hope you don't mind me invading your space, because I'm about to."
 
     "Serena sits down next to me."
@@ -922,13 +960,19 @@ label programmer_ending:
     i "Of course not. How are you, Serena?"
 
     p "Peachy. I was just thinking, you seemed pretty interested in codeworld yesterday, and you took to it pretty fast."
+
+    show programmer explain
     p "We have a little bandwidth right now for training. If you want, I could talk to Melinda about working some engineering into your internship."
     p "I can't guarantee you'll be a pro by the time you leave, but we'll def teach you enough that you can push a bugfix or two into the Astral War repo."
     p "What do you say?"
 
     i "I'd love that! Thank you so much, Serena!"
 
+    show programmer happy
     p "Awesome, I'll run it by her this afternoon. In the meantime, let's talk cats."
+
+    hide programmer
+    with dissolve
 
     "I spent the rest of the summer helping Melinda get Astral War out the door. But as the months wore on and May turned to August, I found myself spending more and more time with Serena's team."
     "Serena took me under her wing and taught me so much more about programming than I ever thought possible in just one summer."
@@ -964,6 +1008,7 @@ label artist_ending:
 
     i "What?"
 
+    show artist happy
     a "You know what I mean. I could teach you some stuff. About art. While you're here."
     a "I'll ask Melinda if I can borrow you sometimes, and you can help on the art side."
     a "It seemed like you were interested, so I thought I'd at least ask. What do you think?"
@@ -971,7 +1016,10 @@ label artist_ending:
     i "I'd be honored. Thank you so much, Maeve."
 
     a "No prob. I'll talk to Melinda about it later today."
+    show artist happy
     a "In the meantime, let's eat!"
+    hide artist
+    with dissolve
 
     "I spent the rest of the summer helping Melinda get Astral War out the door. But as the months wore on and May turned to August, I found myself spending more and more time \"under Maeve's wings,\" as she would say."
     "Maeve and her team taught me so much more about art and animation than I ever thought possible in just one summer."
