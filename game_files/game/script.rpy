@@ -27,6 +27,10 @@ define a = Character('Maeve', color="#e3a000")
 define d = Character('Angela', color="#7b1ff6")
 define i = Character("[povname]", color="#00ff00")
 
+# Define special text color for each character
+define phl = "#e30000"
+define ahl = "#e3a000"
+define dhl = "#7b1ff6"
 
 # The game starts here.
 label start:
@@ -67,7 +71,7 @@ label start:
 
     show programmer happy
 
-    "???" "Thanks. I got this shirt in Germany last time I visited my parents. I’m {color=#e30000}Serena{/color}, by the way. And as I recall, your name is…"
+    "???" "Thanks. I got this shirt in Germany last time I visited my parents. I’m {color=[phl]}Serena{/color}, by the way. And as I recall, your name is…"
 
     #start input script
     python:
@@ -143,15 +147,15 @@ label start:
 
     show programmer explain
 
-    p "So, {color=#e30000}programs{/color} are sequences of instructions that change the computer's data. That's all a program really is: data, and instructions that modify data."
+    p "So, {color=[hl]}programs{/color} are sequences of instructions that change the computer's data. That's all a program really is: data, and instructions that modify data."
 
-    p "Let's talk about {color=#e30000}data{/color} first. Imagine you're looking at a spreadsheet. And this spreadsheet lists, hmm... inventory items. Yeah, items that are in your inventory."
+    p "Let's talk about {color=[hl]}data{/color} first. Imagine you're looking at a spreadsheet. And this spreadsheet lists, hmm... inventory items. Yeah, items that are in your inventory."
 
     i "Okay. A spreadsheet listing items in my inventory."
 
-    p "In one column, you have the {color=#e30000}item name.{/color} In the next column, you have the {color=#e30000}item's value{/color} in gil. I mean, gold. The item's value in gold."
+    p "In one column, you have the {color=[hl]}item name.{/color} In the next column, you have the {color=[phl]}item's value{/color} in gil. I mean, gold. The item's value in gold."
 
-    p "Then, the third column lists {color=#e30000}how many{/color} of that item you have."
+    p "Then, the third column lists {color=[phl]}how many{/color} of that item you have."
 
     hide programmer
 
@@ -159,9 +163,9 @@ label start:
 
     show programmer explain
 
-    p "So the first column, the name, that's a piece of data. And the type of the data is text. In programming, though, we call that a {color=#e30000}string{/color}."
+    p "So the first column, the name, that's a piece of data. And the type of the data is text. In programming, though, we call that a {color=[phl]}string{/color}."
 
-    p "The monetary value would be a {color=#e30000}floating-point number{/color}, meaning it's a number that can have precision after the decimal point. Like 10.25, or 1.50."
+    p "The monetary value would be a {color=[phl]}floating-point number{/color}, meaning it's a number that can have precision after the decimal point. Like 10.25, or 1.50."
 
     p "So what type of data do you think the item count column would be?"
 
@@ -219,7 +223,7 @@ label programmer_right_1:
     show programmer happy at center
     with move
 
-    p "That's right. Great job! The item count would be an {color=#e30000}integer.{/color}"
+    p "That's right. Great job! The item count would be an {color=[phl]}integer.{/color}"
 
     show programmer explain
 
@@ -227,23 +231,23 @@ label programmer_right_1:
 
     hide programmer
 
-    "She types into the program: {color=#e30000}int count;{/color}"
+    "She types into the program: {color=[phl]}int count;{/color}"
 
     show programmer explain
 
-    p "To declare a {color=#e30000}string{/color}, I'd write this."
+    p "To declare a {color=[phl]}string{/color}, I'd write this."
 
     hide programmer
 
-    "She types: {color=#e30000}String name;{/color}"
+    "She types: {color=[phl]}String name;{/color}"
 
     show programmer explain
 
-    p "And a {color=#e30000}floating-point{/color} number looks like this:"
+    p "And a {color=[phl]}floating-point{/color} number looks like this:"
 
     hide programmer
 
-    "{color=#e30000}float value;{/color}"
+    "{color=[phl]}float value;{/color}"
 
     show programmer explain
 
@@ -410,7 +414,7 @@ label artist_part_1:
 
     i "Yup, that's me."
 
-    a "Nice to meetcha! I'm {color=#e3a000}Maeve{/color}--I'm the art lead on Astral War. You studying animation?"
+    a "Nice to meetcha! I'm {color=[ahl]}Maeve{/color}--I'm the art lead on Astral War. You studying animation?"
 
     i "I'm kind of trying a little bit of everything right now. I guess I'm not really sure yet what I want to specialize in."
 
@@ -425,7 +429,7 @@ label artist_part_1:
 
     #show art_image_maya
 
-    "My face must reflect something of the consternation I feel, because {color=#e3a000}Maeve{/color} glances over at me and laughs."
+    "My face must reflect something of the consternation I feel, because {color=[ahl]}Maeve{/color} glances over at me and laughs."
 
     #hide art_image_maya
 
@@ -449,19 +453,19 @@ label artist_part_1:
 
     show artist explain
 
-    a "Every 3D model in a game is composed of a mesh of little many shapes called {color=#e3a000}POLYGONS{/color} which the engine calculates and draws. If you look at a game model's polygons, it looks like it is covered with a net of little squares, a \"wireframe.\""
+    a "Every 3D model in a game is composed of a mesh of little many shapes called {color=[ahl]}POLYGONS{/color} which the engine calculates and draws. If you look at a game model's polygons, it looks like it is covered with a net of little squares, a \"wireframe.\""
 
     i "So when people talk about \"polycount,\" they are talking about how many of those square shapes there are?"
 
     show artist normal
 
-    a "Exactly! So {color=#e3a000}MODELING{/color} is the job of building game assets using polygons."
+    a "Exactly! So {color=[ahl]}MODELING{/color} is the job of building game assets using polygons."
 
     i "Sweet. So what are some of the other jobs on the art team?"
 
     show artist happy
 
-    a "Well, there's drawing {color=#e3a000}CONCEPT ART{/color} \(That's a fun one\), there's {color=#e3a000}TEXTURING{/color} the model after it's created, there's {color=#e3a000}RIGGING{/color}--setting up the model so it can be animated, and {color=#e3a000}ANIMATION{/color}--adding movement to the model."
+    a "Well, there's drawing {color=[ahl]}CONCEPT ART{/color} \(That's a fun one\), there's {color=[ahl]}TEXTURING{/color} the model after it's created, there's {color=[ahl]}RIGGING{/color}--setting up the model so it can be animated, and {color=[ahl]}ANIMATION{/color}--adding movement to the model."
 
     "She waves her hands excitedly as she talks, and I wonder if all 3D artists get this animated when talking about animation. It's obviously something she's passionate about, and I'd like to find out more..."
 
@@ -475,13 +479,13 @@ label artist_part_1:
 
     a "There are different types of texture maps that do different things for the way a model is displayed."
 
-    a "A {color=#e3a000}DIFFUSE MAP{/color} provides the diffuse color of the model, a {color=#e3a000}NORMAL MAP{/color} makes it bumpy, a {color=#e3a000}SPECULAR MAP{/color} controls how shiny it is, and an {color=#e3a000}ALPHA MAP{/color} lets the engine know which parts of the model should be rendered as transparent."
+    a "A {color=[ahl]}DIFFUSE MAP{/color} provides the diffuse color of the model, a {color=[ahl]}NORMAL MAP{/color} makes it bumpy, a {color=[ahl]}SPECULAR MAP{/color} controls how shiny it is, and an {color=[ahl]}ALPHA MAP{/color} lets the engine know which parts of the model should be rendered as transparent."
 
     #hide art_image_texture
 
     show artist explain
 
-    a "So like, to double check, creating a {color=#e3a000}specular map{/color} would be part of which job?"
+    a "So like, to double check, creating a {color=[ahl]}specular map{/color} would be part of which job?"
 
     hide artist explain
     $ art_score = 0
@@ -531,7 +535,7 @@ label art_wrong_1:
 
 label art_part_2:
     show artist normal
-    i "And you said {color=#e3a000}rigging{/color} was like setting up the character?"
+    i "And you said {color=[ahl]}rigging{/color} was like setting up the character?"
 
     #show art_image_rig
     a "Yeah, it's getting it ready for animation, by putting joints inside it. Giving a character a \"skeleton\" and controls for the animator to move. It's like adding strings to a puppet!"
@@ -670,7 +674,7 @@ label art_part_4:
     hide artist normal
     with dissolve
 
-    "As I walk away, {color=#e3a000}Maeve{/color} gets absorbed in her work. I see her doing a weird motion with her arm, like she is testing the way her elbow bends, and then goes to make adjustments to the character on the screen."
+    "As I walk away, {color=[ahl]}Maeve{/color} gets absorbed in her work. I see her doing a weird motion with her arm, like she is testing the way her elbow bends, and then goes to make adjustments to the character on the screen."
 
     "Animators are kinda... different."
 
@@ -699,11 +703,11 @@ label proceed_from_artist_feelings:
 
     "???" "Hey there. I understand you're the new apprentice?"
 
-    "Compared to {color=#e30000}Serena{/color} and {color=#e3a000}Maeve{/color}, this woman seems a lot more... formal. I can somehow tell from her manner that she's an overachiever."
+    "Compared to {color=[phl]}Serena{/color} and {color=[ahl]}Maeve{/color}, this woman seems a lot more... formal. I can somehow tell from her manner that she's an overachiever."
 
     i "That's me. Are you Melinda?"
 
-    "???" "No, but Melinda should be in soon. I'm {color=#7b1ff6}Angela.{/color} Lead designer for Astral War."
+    "???" "No, but Melinda should be in soon. I'm {color=[dhl]}Angela.{/color} Lead designer for Astral War."
 
     d "Since Melinda isn't here yet, I thought I'd check in and see if you had any questions."
 
@@ -716,9 +720,9 @@ label proceed_from_artist_feelings:
     i "...do?"
 
     show designer happy
-    "{color=#7b1ff6}Angela{/color} laughs."
+    "{color=[dhl]}Angela{/color} laughs."
 
-    d "That's actually a very good question. {color=#7b1ff6}Game designers{/color} do a lot of things. One of my favorite things about this job is that I don't have a typical working day."
+    d "That's actually a very good question. {color=[dhl]}Game designers{/color} do a lot of things. One of my favorite things about this job is that I don't have a typical working day."
 
     show designer normal
     "She glances down at her smart watch."
@@ -755,23 +759,23 @@ label proceed_from_artist_feelings:
 
     show designer happy
 
-    d "Much to {color=#e30000}Serena's{/color} chagrin."
+    d "Much to {color=[phl]}Serena's{/color} chagrin."
 
     show designer normal
 
     d "So first let's talk about the game design process."
-    d "It all starts with {color=#7b1ff6}research.{/color} My undergrad degree is in History and I have a Master's in Musicology, so I know quite a lot about research."
+    d "It all starts with {color=[dhl]}research.{/color} My undergrad degree is in History and I have a Master's in Musicology, so I know quite a lot about research."
 
     i "That's a pretty interesting background for a game designer."
 
     d "It's more common than you might think. The best training for a game designer is a broad base of knowledge, plus a little bit of coding, writing, and art."
-    d "I've worked really hard to be proficient in all of those skills. I'm not expert—that's what people like {color=#e30000}Serena{/color} and {color=#e3a000}Maeve{/color} are for—but I'm good enough to communicate my intentions through prototypes or sketches."
+    d "I've worked really hard to be proficient in all of those skills. I'm not expert—that's what people like {color=[phl]}Serena{/color} and {color=[ahl]}Maeve{/color} are for—but I'm good enough to communicate my intentions through prototypes or sketches."
 
     show designer explain
-    d "After we've gathered a lot of research, the next stage is {color=#7b1ff6}brainstorming{/color} and coming up with the {color=#7b1ff6}initial concept.{/color}"
-    d "Part of that step is adding {color=#7b1ff6}constraints{/color}: we have deadlines, a budget, limits to our technical abilities. But often, constraints can actually make the creative process easier."
-    d "We take an iterative approach here, which means we do a lot of {color=#7b1ff6}rapid protoyping{/color} to get feedback on our changes as quickly as possible."
-    d "We iterate on the prototype many, many times before we move on to the {color=#7b1ff6}implementation stage{/color}—that is, building the actual game. Then we iterate on the implementation, too."
+    d "After we've gathered a lot of research, the next stage is {color=[dhl]}brainstorming{/color} and coming up with the {color=[dhl]}initial concept.{/color}"
+    d "Part of that step is adding {color=[dhl]}constraints{/color}: we have deadlines, a budget, limits to our technical abilities. But often, constraints can actually make the creative process easier."
+    d "We take an iterative approach here, which means we do a lot of {color=[dhl]}rapid protoyping{/color} to get feedback on our changes as quickly as possible."
+    d "We iterate on the prototype many, many times before we move on to the {color=[dhl]}implementation stage{/color}—that is, building the actual game. Then we iterate on the implementation, too."
 
     show designer normal
     d "That way, we don't invest a lot of time in implementing a rule that people won't like."
@@ -842,14 +846,14 @@ label designer_right_1:
 
     d "Great answer! Players, objectives, and rules are three of the formal elements of gameplay."
     show designer normal
-    d "There are several possible types of {color=#7b1ff6}player structures.{/color} Here at Meteoric, all our games are {color=#7b1ff6}single-player{/color}, which means they have a player structure called {color=#7b1ff6}solitaire.{/color}"
+    d "There are several possible types of {color=[dhl]}player structures.{/color} Here at Meteoric, all our games are {color=[dhl]}single-player{/color}, which means they have a player structure called {color=[dhl]}solitaire.{/color}"
 
     i "Like the card game?"
 
     show designer explain
     d "Exactly. Just like a single-player video game, solitaire involves a single actor interacting with the game system."
-    d "Another player structure is {color=#7b1ff6}PvE, player vs. environment,{/color} where multiple players are pitted against the game system cooperatively. Some MMOs fit that category."
-    d "And other MMOs fit a different category: {color=#7b1ff6}PvP,{/color} also called a {color=#7b1ff6}free-for-all{/color}, which is player vs. player vs. player and so on."
+    d "Another player structure is {color=[dhl]}PvE, player vs. environment,{/color} where multiple players are pitted against the game system cooperatively. Some MMOs fit that category."
+    d "And other MMOs fit a different category: {color=[dhl]}PvP,{/color} also called a {color=[dhl]}free-for-all{/color}, which is player vs. player vs. player and so on."
     show designer normal
     d "Can you give me an example of a game and tell me what its player structure is?"
 
@@ -902,10 +906,10 @@ label designer_right_2:
     d "Exactly. Monopoly is an example of a free-for-all game."
 
     show designer explain
-    d "So, you have the player structure, then you have the {color=#7b1ff6}objectives,{/color} or the {color=#7b1ff6}conditions for winning and losing.{/color}"
-    d "There are many different types of {color=#7b1ff6}winning conditions,{/color} as you probably know. In narrative video games like the ones we do at Meteroic, this tends to be simple: make it to the end of the game."
+    d "So, you have the player structure, then you have the {color=[dhl]}objectives,{/color} or the {color=[dhl]}conditions for winning and losing.{/color}"
+    d "There are many different types of {color=[dhl]}winning conditions,{/color} as you probably know. In narrative video games like the ones we do at Meteroic, this tends to be simple: make it to the end of the game."
     d "But there are also games where the winning condition is controlling a certain amount of territory or collecting a certain amount of currency."
-    d "Players achieve objectives by making decisions within the constraints of the game rules, or {color=#7b1ff6}mechanics.{/color}"
+    d "Players achieve objectives by making decisions within the constraints of the game rules, or {color=[dhl]}mechanics.{/color}"
 
     show designer normal
     d "Game mechanics are the biggest part of my job. Once we have our first prototype, the rest of the process is spent tweaking, refining, and balancing the mechanics."
@@ -1005,9 +1009,9 @@ label programmer_ending:
     show programmer normal
     p "Hey girl. Hope you don't mind me invading your space, because I'm about to."
 
-    "{color=#e30000}Serena{/color} sits down next to me."
+    "{color=[phl]}Serena{/color} sits down next to me."
 
-    i "Of course not. How are you, {color=#e30000}Serena?{/color}"
+    i "Of course not. How are you, {color=[phl]}Serena?{/color}"
 
     p "Peachy. I was just thinking, you seemed pretty interested in codeworld yesterday, and you took to it pretty fast."
 
@@ -1024,9 +1028,9 @@ label programmer_ending:
     hide programmer
     with dissolve
 
-    "I spent the rest of the summer helping Melinda get Astral War out the door. But as the months wore on and May turned to August, I found myself spending more and more time with {color=#e30000}Serena's{/color} team."
-    "{color=#e30000}Serena{/color} took me under her wing and taught me so much more about programming than I ever thought possible in just one summer."
-    "This fall, I'm planning on adding some Computer Science classes to my schedule. {color=#e30000}Serena{/color} says I might even be able to place out of CS101, the introductory course for the major."
+    "I spent the rest of the summer helping Melinda get Astral War out the door. But as the months wore on and May turned to August, I found myself spending more and more time with {color=[phl]}Serena's{/color} team."
+    "{color=[phl]}Serena{/color} took me under her wing and taught me so much more about programming than I ever thought possible in just one summer."
+    "This fall, I'm planning on adding some Computer Science classes to my schedule. {color=[phl]}Serena{/color} says I might even be able to place out of CS101, the introductory course for the major."
     "Who knows? Maybe code will turn out to be my lifelong passion."
 
     return
@@ -1063,7 +1067,7 @@ label artist_ending:
     a "I'll ask Melinda if I can borrow you sometimes, and you can help on the art side."
     a "It seemed like you were interested, so I thought I'd at least ask. What do you think?"
 
-    i "I'd be honored. Thank you so much, {color=#e3a000}Maeve.{/color}"
+    i "I'd be honored. Thank you so much, {color=[ahl]}Maeve.{/color}"
 
     a "No prob. I'll talk to Melinda about it later today."
     show artist happy
@@ -1071,8 +1075,8 @@ label artist_ending:
     hide artist
     with dissolve
 
-    "I spent the rest of the summer helping Melinda get Astral War out the door. But as the months wore on and May turned to August, I found myself spending more and more time \"under {color=#e3a000}Maeve's{/color} wings,\" as she would say."
-    "{color=#e3a000}Maeve{/color} and her team taught me so much more about art and animation than I ever thought possible in just one summer."
+    "I spent the rest of the summer helping Melinda get Astral War out the door. But as the months wore on and May turned to August, I found myself spending more and more time \"under {color=[ahl]}Maeve's{/color} wings,\" as she would say."
+    "{color=[ahl]}Maeve{/color} and her team taught me so much more about art and animation than I ever thought possible in just one summer."
     "This fall, I'm planning on adding some Visual Arts classes to my schedule. I might even take night classes in 3D Animation at the art school downtown."
     "Who knows? Maybe animation will turn out to be my lifelong passion."
 
