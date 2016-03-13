@@ -145,13 +145,13 @@ label start:
 
     p "So, {color=#e30000}programs{/color} are sequences of instructions that change the computer's data. That's all a program really is: data, and instructions that modify data."
 
-    p "Let's talk about data first. Imagine you're looking at a spreadsheet. And this spreadsheet lists, hmm... inventory items. Yeah, items that are in your inventory."
+    p "Let's talk about {color=#e30000}data{/color} first. Imagine you're looking at a spreadsheet. And this spreadsheet lists, hmm... inventory items. Yeah, items that are in your inventory."
 
     i "Okay. A spreadsheet listing items in my inventory."
 
-    p "In one column, you have the item name. In the next column, you have the item's value in gil. I mean, gold. The item's value in gold."
+    p "In one column, you have the {color=#e30000}item name.{/color} In the next column, you have the {color=#e30000}item's value{/color} in gil. I mean, gold. The item's value in gold."
 
-    p "Then, the third column lists how many of that item you have."
+    p "Then, the third column lists {color=#e30000}how many{/color} of that item you have."
 
     hide programmer
 
@@ -209,6 +209,9 @@ label programmer_wrong_1:
     jump programmer_question_1
 
 label programmer_wrong_number:
+    show programmer explain at center
+    with move
+    
     p "Almost, but that's not specific enough. Give it another shot."
     jump programmer_question_1
 
@@ -257,7 +260,6 @@ label programmer_question_2_first:
     hide sample_script_1
        
     show programmer normal at right
-    with move
     
     menu:
         "Plain Crossbow":
@@ -320,7 +322,6 @@ label programmer_question_3_first:
     hide sample_script_2
 
     show programmer normal at right
-    with move
 
     menu:
         "3":
@@ -474,13 +475,13 @@ label artist_part_1:
 
     a "There are different types of texture maps that do different things for the way a model is displayed."
 
-    a "A DIFFUSE MAP provides the diffuse color of the model, a {color=#e3a000}NORMAL MAP{/color} makes it bumpy, a {color=#e3a000}SPECULAR MAP{/color} controls how shiny it is, and an {color=#e3a000}ALPHA MAP{/color} lets the engine know which parts of the model should be rendered as transparent."
+    a "A {color=#e3a000}DIFFUSE MAP{/color} provides the diffuse color of the model, a {color=#e3a000}NORMAL MAP{/color} makes it bumpy, a {color=#e3a000}SPECULAR MAP{/color} controls how shiny it is, and an {color=#e3a000}ALPHA MAP{/color} lets the engine know which parts of the model should be rendered as transparent."
 
     #hide art_image_texture
 
     show artist explain
 
-    a "So like, to double check, creating a {color#e3a000}specular map{/color} would be part of which job?"
+    a "So like, to double check, creating a {color=#e3a000}specular map{/color} would be part of which job?"
 
     hide artist explain
     $ art_score = 0
@@ -566,13 +567,13 @@ label art_question_2:
     with move
 
     menu:
-        "joints":
+        "Joints":
             jump art_right_2
-        "locators":
+        "Locators":
             jump art_wrong_2
-        "materials":
+        "Materials":
             jump art_wrong_2
-        "wireframes":
+        "Wireframes":
             jump art_wrong_2
 
 label art_right_2:
@@ -698,11 +699,11 @@ label proceed_from_artist_feelings:
 
     "???" "Hey there. I understand you're the new apprentice?"
 
-    "Compared to Serena and Maeve, this woman seems a lot more... formal. I can somehow tell from her manner that she's an overachiever."
+    "Compared to {color=#e30000}Serena{/color} and {color=#e3a000}Maeve{/color}, this woman seems a lot more... formal. I can somehow tell from her manner that she's an overachiever."
 
     i "That's me. Are you Melinda?"
 
-    "???" "No, but Melinda should be in soon. I'm Angela. Lead designer for Astral War."
+    "???" "No, but Melinda should be in soon. I'm {color=#7b1ff6}Angela.{/color} Lead designer for Astral War."
 
     d "Since Melinda isn't here yet, I thought I'd check in and see if you had any questions."
 
@@ -715,9 +716,9 @@ label proceed_from_artist_feelings:
     i "...do?"
 
     show designer happy
-    "Angela laughs."
+    "{color=#7b1ff6}Angela{/color} laughs."
 
-    d "That's actually a very good question. Game designers do a lot of things. One of my favorite things about this job is that I don't have a typical working day."
+    d "That's actually a very good question. {color=#7b1ff6}Game designers{/color} do a lot of things. One of my favorite things about this job is that I don't have a typical working day."
 
     show designer normal
     "She glances down at her smart watch."
@@ -725,10 +726,19 @@ label proceed_from_artist_feelings:
     d "It looks like I have a few minutes before my 12 o'clock meeting. Why don't we sit at the lunch table and I'll try to give you a real answer?"
 
     i "I'd love that!"
-
+    
+    hide designer
+    with dissolve
+    
     "We sit down at the table together. It's kind of refreshing having face-to-face conversation for a bit, rather than looking at a screen."
-
+    
+    show designer explain
+    with dissolve
+    
     d "So the first thing to understand about game design is that it goes way beyond video games."
+    
+    show designer normal
+    
     d "In fact, I got my start designing board games up in Montreal."
 
     i "Wow. I never thought about it that way, but it makes perfect sense."
@@ -745,23 +755,23 @@ label proceed_from_artist_feelings:
 
     show designer happy
 
-    d "Much to Serena's chagrin."
+    d "Much to {color=#e30000}Serena's{/color} chagrin."
 
     show designer normal
 
     d "So first let's talk about the game design process."
-    d "It all starts with research. My undergrad degree is in History and I have a Master's in Musicology, so I know quite a lot about research."
+    d "It all starts with {color=#7b1ff6}research.{/color} My undergrad degree is in History and I have a Master's in Musicology, so I know quite a lot about research."
 
     i "That's a pretty interesting background for a game designer."
 
     d "It's more common than you might think. The best training for a game designer is a broad base of knowledge, plus a little bit of coding, writing, and art."
-    d "I've worked really hard to be proficient in all of those skills. I'm not expert—that's what people like Serena and Maeve are for—but I'm good enough to communicate my intentions through prototypes or sketches."
+    d "I've worked really hard to be proficient in all of those skills. I'm not expert—that's what people like {color=#e30000}Serena{/color} and {color=#e3a000}Maeve{/color} are for—but I'm good enough to communicate my intentions through prototypes or sketches."
 
     show designer explain
-    d "After we've gathered a lot of research, the next stage is brainstorming and coming up with the initial concept."
-    d "Part of that step is adding constraints: we have deadlines, a budget, limits to our technical abilities. But often, constraints can actually make the creative process easier."
-    d "We take an iterative approach here, which means we do a lot of rapid protoyping to get feedback on our changes as quickly as possible."
-    d "We iterate on the prototype many, many times before we move on to the implementation stage—that is, building the actual game. Then we iterate on the implementation, too."
+    d "After we've gathered a lot of research, the next stage is {color=#7b1ff6}brainstorming{/color} and coming up with the {color=#7b1ff6}initial concept.{/color}"
+    d "Part of that step is adding {color=#7b1ff6}constraints{/color}: we have deadlines, a budget, limits to our technical abilities. But often, constraints can actually make the creative process easier."
+    d "We take an iterative approach here, which means we do a lot of {color=#7b1ff6}rapid protoyping{/color} to get feedback on our changes as quickly as possible."
+    d "We iterate on the prototype many, many times before we move on to the {color=#7b1ff6}implementation stage{/color}—that is, building the actual game. Then we iterate on the implementation, too."
 
     show designer normal
     d "That way, we don't invest a lot of time in implementing a rule that people won't like."
@@ -772,12 +782,12 @@ label proceed_from_artist_feelings:
     d "Yes. I'm using the term broadly. That brings us to some of the core principles of game design: What are the most basic elements of a game?"
     d "What do you think?"
 
-    show designer at right
-    with move
-
     $ design_score = 0
 
 label designer_question_1_first:
+    show designer normal at right
+    with move
+    
     menu:
         "Graphics, sound, textures.":
             jump designer_wrong_1_graphics
@@ -790,6 +800,9 @@ label designer_question_1_first:
             jump designer_wrong_1_levels
 
 label designer_question_1:
+    show designer normal at right
+    with move
+    
     menu:
         "Graphics, sound, textures.":
             jump designer_wrong_1_graphics
@@ -829,20 +842,22 @@ label designer_right_1:
 
     d "Great answer! Players, objectives, and rules are three of the formal elements of gameplay."
     show designer normal
-    d "There are several possible types of player structures. Here at Meteoric, all our games are single-player, which means they have a player structure called solitaire."
+    d "There are several possible types of {color=#7b1ff6}player structures.{/color} Here at Meteoric, all our games are {color=#7b1ff6}single-player{/color}, which means they have a player structure called {color=#7b1ff6}solitaire.{/color}"
 
     i "Like the card game?"
 
     show designer explain
     d "Exactly. Just like a single-player video game, solitaire involves a single actor interacting with the game system."
-    d "Another player structure is PvE, player vs. environment, where multiple players are pitted against the game system cooperatively. Some MMOs fit that category."
-    d "And other MMOs fit a different category: PvP, also called a free-for-all, which is player vs. player vs. player and so on."
+    d "Another player structure is {color=#7b1ff6}PvE, player vs. environment,{/color} where multiple players are pitted against the game system cooperatively. Some MMOs fit that category."
+    d "And other MMOs fit a different category: {color=#7b1ff6}PvP,{/color} also called a {color=#7b1ff6}free-for-all{/color}, which is player vs. player vs. player and so on."
     show designer normal
     d "Can you give me an example of a game and tell me what its player structure is?"
-    show designer at right
-    with move
+
 
 label designer_question_2_first:
+    show designer at right
+    with move
+    
     menu:
         "Hide and seek is PvE.":
             jump designer_wrong_2_hideseek
@@ -853,6 +868,9 @@ label designer_question_2_first:
             jump designer_wrong_2_blackjack
 
 label designer_question_2:
+    show designer at right
+    with move
+    
     menu:
         "Hide and seek is PvE.":
             jump designer_wrong_2_hideseek
@@ -884,10 +902,10 @@ label designer_right_2:
     d "Exactly. Monopoly is an example of a free-for-all game."
 
     show designer explain
-    d "So, you have the player structure, then you have the objectives, or the conditions for winning and losing."
-    d "There are many different types of winning conditions, as you probably know. In narrative video games like the ones we do at Meteroic, this tends to be simple: make it to the end of the game."
+    d "So, you have the player structure, then you have the {color=#7b1ff6}objectives,{/color} or the {color=#7b1ff6}conditions for winning and losing.{/color}"
+    d "There are many different types of {color=#7b1ff6}winning conditions,{/color} as you probably know. In narrative video games like the ones we do at Meteroic, this tends to be simple: make it to the end of the game."
     d "But there are also games where the winning condition is controlling a certain amount of territory or collecting a certain amount of currency."
-    d "Players achieve objectives by making decisions within the constraints of the game rules, or mechanics."
+    d "Players achieve objectives by making decisions within the constraints of the game rules, or {color=#7b1ff6}mechanics.{/color}"
 
     show designer normal
     d "Game mechanics are the biggest part of my job. Once we have our first prototype, the rest of the process is spent tweaking, refining, and balancing the mechanics."
@@ -897,12 +915,14 @@ label designer_right_2:
 
     i "I haven't heard of it. I'll check it out."
 
-    d "I highly recommend you do. There's also an episode of Extra Credits called Narrative Mechanics that dives a little deeper into the relationship between, well, narrative and mechanics."
+    d "I highly recommend you do. There's also an episode of Extra Credits called \"Narrative Mechanics\" that dives a little deeper into the relationship between, well, narrative and mechanics."
     d "So, that was a pretty long answer to your question, but did I answer it adequately? Do you know what a game designer does now?"
-    show designer at right
-    with move
+
 
 label designer_question_3_first:
+    show designer at right
+    with move
+    
     menu:
         "Yeah. They design and iterate on gameplay mechanics.":
             $ design_score += 1
@@ -915,6 +935,9 @@ label designer_question_3_first:
             jump designer_wrong_3
 
 label designer_question_3:
+    show designer at right
+    with move
+    
     menu:
         "Yeah. They design and iterate on gameplay mechanics.":
             jump designer_right_3
@@ -960,6 +983,9 @@ menu:
         jump endings
 
 label endings:
+    scene bg office
+    with fade
+    
     "The next day, when I sit down at lunch table with my food, I'm joined by an unexpected visitor."
 
     $ prog = prog_score * prog_feelings
@@ -979,9 +1005,9 @@ label programmer_ending:
     show programmer normal
     p "Hey girl. Hope you don't mind me invading your space, because I'm about to."
 
-    "Serena sits down next to me."
+    "{color=#e30000}Serena{/color} sits down next to me."
 
-    i "Of course not. How are you, Serena?"
+    i "Of course not. How are you, {color=#e30000}Serena?{/color}"
 
     p "Peachy. I was just thinking, you seemed pretty interested in codeworld yesterday, and you took to it pretty fast."
 
@@ -998,9 +1024,9 @@ label programmer_ending:
     hide programmer
     with dissolve
 
-    "I spent the rest of the summer helping Melinda get Astral War out the door. But as the months wore on and May turned to August, I found myself spending more and more time with Serena's team."
-    "Serena took me under her wing and taught me so much more about programming than I ever thought possible in just one summer."
-    "This fall, I'm planning on adding some Computer Science classes to my schedule. Serena says I might even be able to place out of CS101, the introductory course for the major."
+    "I spent the rest of the summer helping Melinda get Astral War out the door. But as the months wore on and May turned to August, I found myself spending more and more time with {color=#e30000}Serena's{/color} team."
+    "{color=#e30000}Serena{/color} took me under her wing and taught me so much more about programming than I ever thought possible in just one summer."
+    "This fall, I'm planning on adding some Computer Science classes to my schedule. {color=#e30000}Serena{/color} says I might even be able to place out of CS101, the introductory course for the major."
     "Who knows? Maybe code will turn out to be my lifelong passion."
 
     return
@@ -1037,7 +1063,7 @@ label artist_ending:
     a "I'll ask Melinda if I can borrow you sometimes, and you can help on the art side."
     a "It seemed like you were interested, so I thought I'd at least ask. What do you think?"
 
-    i "I'd be honored. Thank you so much, Maeve."
+    i "I'd be honored. Thank you so much, {color=#e3a000}Maeve.{/color}"
 
     a "No prob. I'll talk to Melinda about it later today."
     show artist happy
@@ -1045,8 +1071,8 @@ label artist_ending:
     hide artist
     with dissolve
 
-    "I spent the rest of the summer helping Melinda get Astral War out the door. But as the months wore on and May turned to August, I found myself spending more and more time \"under Maeve's wings,\" as she would say."
-    "Maeve and her team taught me so much more about art and animation than I ever thought possible in just one summer."
+    "I spent the rest of the summer helping Melinda get Astral War out the door. But as the months wore on and May turned to August, I found myself spending more and more time \"under {color=#e3a000}Maeve's{/color} wings,\" as she would say."
+    "{color=#e3a000}Maeve{/color} and her team taught me so much more about art and animation than I ever thought possible in just one summer."
     "This fall, I'm planning on adding some Visual Arts classes to my schedule. I might even take night classes in 3D Animation at the art school downtown."
     "Who knows? Maybe animation will turn out to be my lifelong passion."
 
