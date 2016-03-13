@@ -188,8 +188,8 @@ screen main_menu():
     # The main menu buttons.
     frame:
         style_group "mm"
-        xalign .98
-        yalign .98
+        xalign .5
+        yalign .9
 
         has vbox
 
@@ -222,8 +222,8 @@ screen navigation():
     # The various buttons.
     frame:
         style_group "gm_nav"
-        xalign .98
-        yalign .98
+        xalign .92
+        yalign .9
 
         has vbox
 
@@ -329,11 +329,16 @@ screen load():
     use file_picker
 
 init -2:
-    style file_picker_frame is menu_frame
     style file_picker_nav_button is small_button
     style file_picker_nav_button_text is small_button_text
-    style file_picker_button is large_button
-    style file_picker_text is large_button_text
+    style file_picker_button is small_button
+    style file_picker_text is small_button_text
+    
+    style file_picker_frame:
+        xfill False
+        xmargin 5
+        top_margin 60
+        left_margin 20
 
 
 ##############################################################################
@@ -457,7 +462,9 @@ init -2:
     style pref_frame:
         xfill True
         xmargin 5
-        top_margin 5
+        top_margin 40
+        left_margin 50
+    
 
     style pref_vbox:
         xfill True
