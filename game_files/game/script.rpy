@@ -37,7 +37,7 @@ label start:
     with dissolve
 
 
-    "It’s 9:55 a.m. on the first day of my internship at GameCompany. They told me to be here at 10… The office is locked. No one is here yet."
+    "It’s 9:55 a.m. on the first day of my internship at Meteoric Games. They told me to be here at 10… The office is locked. No one is here yet."
 
     "Me" "Does everyone really arrive after 10…?"
 
@@ -167,6 +167,25 @@ label start:
 
     p "So what type of data do you think the item count column would be?"
 
+    $ prog_score = 0
+
+label programmer_question_1_first:
+    hide textframe
+
+    show programmer normal at right
+    with move
+
+    menu:
+        "Floating-point number.":
+            jump programmer_wrong_1
+        "Integer.":
+            $ prog_score += 1
+            jump programmer_right_1
+        "String.":
+            jump programmer_wrong_1
+        "Number.":
+            jump programmer_wrong_number
+
 label programmer_question_1:
     hide textframe
 
@@ -188,6 +207,7 @@ label programmer_wrong_1:
     with move
 
     p "Not quite. Why don't you try again?"
+    p "What type of data would an item count be?"
     jump programmer_question_1
 
 label programmer_wrong_number:
@@ -233,6 +253,20 @@ label programmer_right_1:
 
     p "So, what do you think is the value of the name variable at the end of this code segment?"
 
+label programmer_question_2_first:
+    hide sample_script_1
+    show programmer normal at right
+    menu:
+        "Plain Crossbow":
+            jump programmer_wrong_2
+        "Golden Crossbow":
+            $ prog_score += 1
+            jump programmer_right_2
+        "nothing":
+            jump programmer_wrong_2
+        "1001.75":
+            jump programmer_wrong_2
+
 label programmer_question_2:
     hide sample_script_1
     show programmer normal at right
@@ -262,7 +296,24 @@ label programmer_right_2:
     show sample_script_2
     p "So, how many crossbows do I have at the end of this code segment?"
 
-label programmer_question_3:
+label programmer_question_3_first:
+    hide sample_script_2
+
+    show programmer normal at right
+    with move
+
+    menu:
+        "3":
+            jump programmer_wrong_3
+        "2":
+            jump programmer_wrong_3
+        "1":
+            $ prog_score += 1
+            jump programmer_right_3
+        "0":
+            jump programmer_wrong_3
+
+label programmer_question_3_first:
     hide sample_script_2
 
     show programmer normal at right
@@ -318,10 +369,13 @@ label programmer_right_3:
 
 menu:
     "It seemed really cool.":
+        $ prog_feelings = 2
         jump proceed_from_programmer_feelings
     "It was just okay.":
+        $ prog_feelings = 1
         jump proceed_from_programmer_feelings
     "I don't think it's my thing.":
+        $ prog_feelings = 0
         jump proceed_from_programmer_feelings
 
 label proceed_from_programmer_feelings:
@@ -426,6 +480,22 @@ label artist_part_1:
     a "So like, to double check, creating a specular map would be part of which job?"
 
     hide artist explain
+    $ art_score = 0
+
+label art_question_1_first:
+    show artist normal at right
+    with move
+
+    menu:
+        "Modeling":
+            jump art_wrong_1
+        "Texturing":
+            $ art_score += 1
+            jump art_right_1
+        "Rigging":
+            jump art_wrong_1
+        "Animation":
+            jump art_wrong_1
 
 label art_question_1:
     show artist normal at right
@@ -456,13 +526,10 @@ label art_wrong_1:
     jump art_question_1
 
 label art_part_2:
-
     show artist normal
-
     i "And you said rigging was like setting up the character?"
 
     #show art_image_rig
-
     a "Yeah, it's getting it ready for animation, by putting joints inside it. Giving a character a \"skeleton\" and controls for the animator to move. It's like adding strings to a puppet!"
 
     i "A skeleton? Heehee... spooky!"
@@ -472,10 +539,24 @@ label art_part_2:
     show artist explain
 
     a "Think of it this way. If a model is like a body, and a texture is the body's skin, then rigging is like the bones and muscles inside the body that allow it to move."
-
     a "Like, if you wanted to make a character's leg bend, what would you need to create?"
 
     hide artist explain
+
+label art_question_2_first:
+    show artist normal at right
+    with move
+
+    menu:
+        "joints":
+            $art_score += 1
+            jump art_right_2
+        "locators":
+            jump art_wrong_2
+        "materials":
+            jump art_wrong_2
+        "wireframes":
+            jump art_wrong_2
 
 label art_question_2:
     show artist normal at right
@@ -507,17 +588,31 @@ label art_wrong_2:
 
 label art_part_3:
     a "And anyway, rigging gets the stuff ready for animation, which is my original background!"
-
     a "Look up the 12 principles of animation. That'll get you started--same ideas hold true whether you are making animation in 2D or 3D, for games or for film."
 
     #show art_image_grapheditor
     a "I set keyframes on the character to define some important poses and then I open this menu, the trusty graph editor, to control the motion between those two poses."
-
     a "Timing, spacing--these curves represent the movement and rotation of all the character controls."
 
     #hide art_image_grapheditor
     #show
     a "So basically the graph editor a tool mostly for..."
+
+
+label art_question_3_first:
+    show artist normal at right
+    with move
+
+    menu:
+        "Optimizing the topology of the model":
+            jump art_wrong_3
+        "Creating shaders":
+            jump art_wrong_3
+        "Giving fine control over the animation":
+            $ art_score += 1
+            jump art_right_3
+        "Organizing the nodes of the scene":
+            jump art_wrong_3
 
 label art_question_3:
     show artist normal at right
@@ -576,10 +671,13 @@ label art_part_4:
 
 menu:
     "It seemed really cool.":
+        $ art_feelings = 2
         jump proceed_from_artist_feelings
     "It was just okay.":
+        $ art_feelings = 1
         jump proceed_from_artist_feelings
     "I don't think it's my thing.":
+        $ art_feelings = 0
         jump proceed_from_artist_feelings
 
 label proceed_from_artist_feelings:
@@ -590,6 +688,7 @@ label proceed_from_artist_feelings:
     "Just as I start to try asking around, another woman comes up to me."
 
     show designer normal
+    with dissolve
 
     "???" "Hey there. I understand you're the new apprentice?"
 
@@ -609,10 +708,12 @@ label proceed_from_artist_feelings:
 
     i "...do?"
 
+    show designer happy
     "Angela laughs."
 
     d "That's actually a very good question. Game designers do a lot of things. One of my favorite things about this job is that I don't have a typical working day."
 
+    show designer normal
     "She glances down at her smart watch."
 
     d "It looks like I have a few minutes before my 12 o'clock meeting. Why don't we sit at the lunch table and I'll try to give you a real answer?"
@@ -635,42 +736,50 @@ label proceed_from_artist_feelings:
 
     d "Much to Serena's chagrin."
 
-    d "So first let's talk about the game design process."
+    show designer normal
 
+    d "So first let's talk about the game design process."
     d "It all starts with research. My undergrad degree is in History and I have a Master's in Musicology, so I know quite a lot about research."
 
     i "That's a pretty interesting background for a game designer."
 
     d "It's more common than you might think. The best training for a game designer is a broad base of knowledge, plus a little bit of coding, writing, and art."
-
     d "I've worked really hard to be proficient in all of those skills. I'm not expert—that's what people like Serena and Maeve are for—but I'm good enough to communicate my intentions through prototypes or sketches."
-
     d "After we've gathered a lot of research, the next stage is brainstorming and coming up with the initial concept."
-
     d "Part of that step is adding constraints: we have deadlines, a budget, limits to our technical abilities. But often, constraints can actually make the creative process easier."
-
     d "We take an iterative approach here, which means we do a lot of rapid protoyping to get feedback on our changes as quickly as possible."
-
     d "We iterate on the prototype many, many times before we move on to the implementation stage—that is, building the actual game. Then we iterate on the implementation, too."
-
     d "That way, we don't invest a lot of time in implementing a rule that people won't like."
 
     i "A rule?"
 
     d "Yes. I'm using the term broadly. That brings us to some of the core principles of game design: What are the most basic elements of a game?"
-
     d "What do you think?"
 
-label designer_question_1
-menu:
-    "Graphics, sound, textures.":
-        jump designer_wrong_1_graphics
-    "Narrative, characters, endings.":
-        jump designer_wrong_1_narrative
-    "Players, objectives, rules.":
-        jump designer_right_1
-    "Levels, puzzles, combat.":
-        jump designer_wrong_1_levels
+    $ design_score = 0
+
+label designer_question_1_first:
+    menu:
+        "Graphics, sound, textures.":
+            jump designer_wrong_1_graphics
+        "Narrative, characters, endings.":
+            jump designer_wrong_1_narrative
+        "Players, objectives, rules.":
+            $ design_score += 1
+            jump designer_right_1
+        "Levels, puzzles, combat.":
+            jump designer_wrong_1_levels
+
+label designer_question_1:
+    menu:
+        "Graphics, sound, textures.":
+            jump designer_wrong_1_graphics
+        "Narrative, characters, endings.":
+            jump designer_wrong_1_narrative
+        "Players, objectives, rules.":
+            jump designer_right_1
+        "Levels, puzzles, combat.":
+            jump designer_wrong_1_levels
 
 label designer_wrong_1_graphics:
     d "Not exactly. Those are all bells and whistles on top of the gameplay. Try again."
@@ -688,18 +797,24 @@ label designer_wrong_1_levels:
 
 label designer_right_1:
     d "Great answer! Players, objectives, and rules are three of the formal elements of gameplay."
-
     d "There are several possible types of player structures. Here at Meteoric, all our games are single-player, which means they have a player structure called solitaire."
 
     i "Like the card game?"
 
     d "Exactly. Just like a single-player video game, solitaire involves a single actor interacting with the game system."
-
     d "Another player structure is PvE, player vs. environment, where multiple players are pitted against the game system cooperatively. Some MMOs fit that category."
-
     d "And other MMOs fit a different category: PvP, also called a free-for-all, which is player vs. player vs. player and so on."
-
     d "Can you give me an example of a game and tell me what its player structure is?"
+
+label designer_question_2_first:
+    menu:
+        "Hide and seek is PvE.":
+            jump designer_wrong_2_hideseek
+        "Monopoly is a free-for-all":
+            $ design_score += 1
+            jump designer_right_2
+        "Blackjack is head-to-head, one player vs. another.":
+            jump designer_wrong_2_blackjack
 
 label designer_question_2:
     menu:
@@ -714,36 +829,40 @@ label designer_wrong_2_hideseek:
     d "Hide and seek is kind of a complicated example, but it isn't PvE because players aren't all on the same side."
     d "Since one person is \"it\" and everyone else is trying to hide from them, it's more like a one-against-many structure."
     d "Try again with another game."
-    jump label_designer_question_2
+    jump designer_question_2
 
 label designer_wrong_2_blackjack:
     d "Close! But actually, in blackjack, all of the dealer's moves are deterministic. So it's more like player vs. game system."
     d "Try again with a different example."
+    jump designer_question_2
 
 label designer_right_2:
     d "Exactly. Monopoly is an example of a free-for-all game."
-
     d "So, you have the player structure, then you have the objectives, or the conditions for winning and losing."
-
     d "There are many different types of winning conditions, as you probably know. In narrative video games like the ones we do at Meteroic, this tends to be simple: make it to the end of the game."
-
     d "But there are also games where the winning condition is controlling a certain amount of territory or collecting a certain amount of currency."
-
     d "Players achieve objectives by making decisions within the constraints of the game rules, or mechanics."
-
     d "Game mechanics are the biggest part of my job. Once we have our first prototype, the rest of the process is spent tweaking, refining, and balancing the mechanics."
-
     d "I need to consider things like modulating difficulty as the game progresses, providing appropriate rewards for player skill, whether the game mechanics support the narrative or feel out of place, and of course, whether or not the game is fun."
-
     d "Then again, fun isn't a requirement for all game design."
-
     d "Have you ever heard of Pathologic? It's not a fun game at all, but it's genius. And it's a great example of mechanics that blend seamlessly with the narrative."
 
     i "I haven't heard of it. I'll check it out."
 
     d "I highly recommend you do. There's also an episode of Extra Credits called Narrative Mechanics that dives a little deeper into the relationship between, well, narrative and mechanics."
-
     d "So, that was a pretty long answer to your question, but did I answer it adequately? Do you know what a game designer does now?"
+
+label designer_question_3_first:
+    menu:
+        "Yeah. They design and iterate on gameplay mechanics.":
+            $ design_score += 1
+            jump designer_right_3
+        "Yeah. They come up with ideas for games.":
+            jump designer_wrong_3
+        "Yeah. They create the characters and game world.":
+            jump designer_wrong_3
+        "Yeah. They tell programmers and artists what to do.":
+            jump designer_wrong_3
 
 label designer_question_3:
     menu:
@@ -758,10 +877,10 @@ label designer_question_3:
 
 label designer_wrong_3:
     d "That's not really the heart of a game designer's job. Do you remember the other stuff we talked about?"
+    jump designer_question_3
 
 label designer_right_3:
     d "That's right! You learned well."
-
     d "Alright, looks like it's time for my 12 o'clock. I'll bring you over to Melinda first so you can get your formal orientation."
 
     "I spend the rest of the day with Melinda, the producer, learning more about Meteoric's current projects."
@@ -770,14 +889,30 @@ label designer_right_3:
 
 menu:
     "It seemed really cool.":
+        $ design_feelings = 2
         jump endings
     "It was just okay.":
+        $ design_feelings = 1
         jump endings
     "I don't think it's my thing.":
+        $ design_feelings = 0
         jump endings
 
 label endings:
     "The next day, when I sit down at lunch table with my food, I'm joined by an unexpected visitor."
+
+    $ prog = prog_score * prog_feelings
+    $ art = art_score * art_feelings
+    $ design = design_score * design_feelings
+
+    if prog >= art and prog >= design:
+        jump programmer_ending
+
+    if art >= prog and art >= design:
+        jump artist_ending
+
+    if design >= art and design >= prog:
+        jump designer_ending
 
 label programmer_ending:
     p "Hey girl. Hope you don't mind me invading your space, because I'm about to."
@@ -787,11 +922,8 @@ label programmer_ending:
     i "Of course not. How are you, Serena?"
 
     p "Peachy. I was just thinking, you seemed pretty interested in codeworld yesterday, and you took to it pretty fast."
-
     p "We have a little bandwidth right now for training. If you want, I could talk to Melinda about working some engineering into your internship."
-
     p "I can't guarantee you'll be a pro by the time you leave, but we'll def teach you enough that you can push a bugfix or two into the Astral War repo."
-
     p "What do you say?"
 
     i "I'd love that! Thank you so much, Serena!"
@@ -799,11 +931,8 @@ label programmer_ending:
     p "Awesome, I'll run it by her this afternoon. In the meantime, let's talk cats."
 
     "I spent the rest of the summer helping Melinda get Astral War out the door. But as the months wore on and May turned to August, I found myself spending more and more time with Serena's team."
-
     "Serena took me under her wing and taught me so much more about programming than I ever thought possible in just one summer."
-
     "This fall, I'm planning on adding some Computer Science classes to my schedule. Serena says I might even be able to place out of CS101, the introductory course for the major."
-
     "Who knows? Maybe code will turn out to be my lifelong passion."
 
     return
@@ -826,9 +955,7 @@ label artist_ending:
     a "Yeah!"
 
     i "..."
-
     i "So..."
-
     i "What's up?"
 
     show artist normal
@@ -838,29 +965,23 @@ label artist_ending:
     i "What?"
 
     a "You know what I mean. I could teach you some stuff. About art. While you're here."
-
     a "I'll ask Melinda if I can borrow you sometimes, and you can help on the art side."
-
     a "It seemed like you were interested, so I thought I'd at least ask. What do you think?"
 
     i "I'd be honored. Thank you so much, Maeve."
 
     a "No prob. I'll talk to Melinda about it later today."
-
     a "In the meantime, let's eat!"
 
     "I spent the rest of the summer helping Melinda get Astral War out the door. But as the months wore on and May turned to August, I found myself spending more and more time \"under Maeve's wings,\" as she would say."
-
     "Maeve and her team taught me so much more about art and animation than I ever thought possible in just one summer."
-
     "This fall, I'm planning on adding some Visual Arts classes to my schedule. I might even take night classes in 3D Animation at the art school downtown."
-
     "Who knows? Maybe animation will turn out to be my lifelong passion."
 
     return
 
 label designer_ending:
-    d "Placeholder thing."
+    d "Placeholder ending with designer."
 
     return
 
