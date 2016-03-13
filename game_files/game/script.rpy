@@ -15,6 +15,7 @@ image designer explain = "designer_explain.png"
 # Non-Sprite Images
 image sample_script_1 = Image("sample_script_1.png", yalign=0.35)
 image sample_script_2 = Image("sample_script_2.png", yalign=0.25)
+image spreadsheet = Image("spreadsheet.png", yalign=0.3)
 image textframe = "textframe.jpg"
 #image art_image_maya = Image("art_image_maya.png")
 #image art_image_texture = Image("art_image_texture.png")
@@ -160,14 +161,15 @@ label start:
     p "Then, the third column lists {color=[phl]}how many{/color} of that item you have."
 
     hide programmer
+    show spreadsheet
 
     "I imagine the spreadsheet in my head..."
 
-    show programmer explain
-
     p "So the first column, the name, that's a piece of data. And the type of the data is text. In programming, though, we call that a {color=[phl]}string{/color}."
-
     p "The monetary value would be a {color=[phl]}floating-point number{/color}, meaning it's a number that can have precision after the decimal point. Like 10.25, or 1.50."
+
+    hide spreadsheet
+    show programmer explain at center
 
     p "So what type of data do you think the item count column would be?"
 
