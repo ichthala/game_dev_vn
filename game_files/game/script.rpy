@@ -11,6 +11,7 @@ image artist explain = "artist_explain.png"
 image designer happy = "artist_happy.png"
 image designer normal = "designer_normal.png"
 image designer explain = "designer_explain.png"
+image designer happy = "designer_happy.png"
 
 # Non-Sprite Images
 image sample_script_1 = Image("sample_script_1.png", yalign=0.35)
@@ -547,14 +548,14 @@ label art_question_2_first:
     with move
 
     menu:
-        "joints":
+        "Joints":
             $art_score += 1
             jump art_right_2
-        "locators":
+        "Locators":
             jump art_wrong_2
-        "materials":
+        "Materials":
             jump art_wrong_2
-        "wireframes":
+        "Wireframes":
             jump art_wrong_2
 
 label art_question_2:

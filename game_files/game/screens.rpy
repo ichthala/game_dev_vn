@@ -1,4 +1,4 @@
-﻿# This file is in the public domain. Feel free to modify it as a basis
+# This file is in the public domain. Feel free to modify it as a basis
 # for your own screens.
 
 # Note that many of these screens may be given additional arguments in the
@@ -70,7 +70,7 @@ screen choice(items):
 
     window:
         style "menu_window"
-        xalign 0.15
+        xalign 0.10
         yalign 0.5
 
         vbox:
@@ -99,8 +99,8 @@ init -2:
         clear
 
     style menu_choice_button is button:
-        xminimum int(config.screen_width * 0.5)
-        xmaximum int(config.screen_width * 0.5)
+        xminimum int(config.screen_width * 0.4)
+        xmaximum int(config.screen_width * 0.4)
 
 
 ##############################################################################
@@ -474,7 +474,7 @@ init -2:
         xalign 1.0
 
     style pref_slider:
-        xmaximum 192
+        xmaximum 190
         xalign 1.0
 
     style soundtest_button:
