@@ -149,13 +149,13 @@ label start:
 
     show programmer explain
 
-    p "So, {color=[hl]}programs{/color} are sequences of instructions that change the computer's data. That's all a program really is: data, and instructions that modify data."
+    p "So, {color=[phl]}programs{/color} are sequences of instructions that change the computer's data. That's all a program really is: data, and instructions that modify data."
 
-    p "Let's talk about {color=[hl]}data{/color} first. Imagine you're looking at a spreadsheet. And this spreadsheet lists, hmm... inventory items. Yeah, items that are in your inventory."
+    p "Let's talk about {color=[phl]}data{/color} first. Imagine you're looking at a spreadsheet. And this spreadsheet lists, hmm... inventory items. Yeah, items that are in your inventory."
 
     i "Okay. A spreadsheet listing items in my inventory."
 
-    p "In one column, you have the {color=[hl]}item name.{/color} In the next column, you have the {color=[phl]}item's value{/color} in gil. I mean, gold. The item's value in gold."
+    p "In one column, you have the {color=[phl]}item name.{/color} In the next column, you have the {color=[phl]}item's value{/color} in gil. I mean, gold. The item's value in gold."
 
     p "Then, the third column lists {color=[phl]}how many{/color} of that item you have."
 
