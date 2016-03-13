@@ -28,7 +28,7 @@ define d = Character('Angela', color="#7b1ff6")
 define i = Character("[povname]", color="#00ff00")
 
 # Define special text color for each character
-define phl = "#e30000"
+define phl = "#c13383"
 define ahl = "#e3a000"
 define dhl = "#7b1ff6"
 
